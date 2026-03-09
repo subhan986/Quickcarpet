@@ -68,8 +68,8 @@ export default function InstantQuoteForm() {
   }
 
   return (
-    <div className="space-y-6">
-      <Card className="w-full">
+    <div className="grid lg:grid-cols-2 gap-8 items-start">
+      <Card className="w-full bg-card/50">
         <CardContent className="p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -81,7 +81,7 @@ export default function InstantQuoteForm() {
                     <FormItem>
                       <FormLabel>Room Size (sq ft)</FormLabel>
                       <FormControl>
-                        <Input type="number" placeholder="e.g., 150" {...field} />
+                        <Input type="number" placeholder="e.g., 150" {...field} className="bg-background"/>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -95,7 +95,7 @@ export default function InstantQuoteForm() {
                       <FormLabel>Carpet Type</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="bg-background">
                             <SelectValue placeholder="Select a type" />
                           </SelectTrigger>
                         </FormControl>
@@ -121,7 +121,7 @@ export default function InstantQuoteForm() {
                     <FormLabel>Carpet Condition</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="bg-background">
                           <SelectValue placeholder="Select condition" />
                         </SelectTrigger>
                       </FormControl>
@@ -142,7 +142,7 @@ export default function InstantQuoteForm() {
                   control={form.control}
                   name="hasPetStains"
                   render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background">
                       <FormControl>
                         <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                       </FormControl>
@@ -159,7 +159,7 @@ export default function InstantQuoteForm() {
                   control={form.control}
                   name="hasOdorRemoval"
                   render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background">
                       <FormControl>
                         <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                       </FormControl>
@@ -181,7 +181,7 @@ export default function InstantQuoteForm() {
                   <FormItem>
                     <FormLabel>Additional Notes (Optional)</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Any specific areas of concern?" {...field} />
+                      <Textarea placeholder="Any specific areas of concern?" {...field} className="bg-background" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -201,45 +201,47 @@ export default function InstantQuoteForm() {
         </CardContent>
       </Card>
       
-      {isSubmitting && (
-        <Card className="animate-pulse">
-            <CardHeader>
-                <CardTitle>Generating Your Quote...</CardTitle>
-                <CardDescription>Our AI is calculating the best price for you.</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-                <div className="h-4 bg-muted rounded w-3/4"></div>
-                <div className="h-4 bg-muted rounded w-1/2"></div>
-                <div className="h-4 bg-muted rounded w-2/3"></div>
-            </CardContent>
-        </Card>
-      )}
+      <div className="flex items-center justify-center">
+        {isSubmitting && (
+            <Card className="animate-pulse w-full bg-card/50">
+                <CardHeader>
+                    <CardTitle>Generating Your Quote...</CardTitle>
+                    <CardDescription>Our AI is calculating the best price for you.</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="h-4 bg-muted rounded w-3/4"></div>
+                    <div className="h-4 bg-muted rounded w-1/2"></div>
+                    <div className="h-4 bg-muted rounded w-2/3"></div>
+                </CardContent>
+            </Card>
+        )}
 
-      {quote && (
-        <Card className="animate-in fade-in-50">
-            <CardHeader>
-                <CardTitle className="font-headline text-2xl">Your Estimated Quote</CardTitle>
-                <CardDescription>Here is the breakdown of your estimated cleaning cost.</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-                <div className="flex justify-between items-center text-3xl font-bold font-headline text-primary">
-                    <span>Total</span>
-                    <span>${quote.estimatedCost.toFixed(2)}</span>
-                </div>
-                <Separator />
-                <div className="space-y-2 text-muted-foreground">
-                    <p className="flex justify-between"><span>Base Cleaning Cost</span> <span>${quote.costBreakdown.baseCleaningCost.toFixed(2)}</span></p>
-                    <p className="flex justify-between"><span>Carpet Type Surcharge</span> <span>${quote.costBreakdown.carpetTypeSurcharge.toFixed(2)}</span></p>
-                    <p className="flex justify-between"><span>Condition Surcharge</span> <span>${quote.costBreakdown.conditionSurcharge.toFixed(2)}</span></p>
-                    <p className="flex justify-between"><span>Pet Stain Treatment</span> <span>${quote.costBreakdown.petStainTreatmentCost.toFixed(2)}</span></p>
-                    <p className="flex justify-between"><span>Odor Removal</span> <span>${quote.costBreakdown.odorRemovalCost.toFixed(2)}</span></p>
-                </div>
-            </CardContent>
-            <CardFooter>
-                <p className="text-xs text-muted-foreground">{quote.disclaimer}</p>
-            </CardFooter>
-        </Card>
-      )}
+        {quote && (
+            <Card className="animate-in fade-in-50 w-full bg-card/50">
+                <CardHeader>
+                    <CardTitle className="font-headline text-2xl text-primary">Your Estimated Quote</CardTitle>
+                    <CardDescription>Here is the breakdown of your estimated cleaning cost.</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="flex justify-between items-center text-3xl font-bold font-headline text-primary">
+                        <span>Total</span>
+                        <span>${quote.estimatedCost.toFixed(2)}</span>
+                    </div>
+                    <Separator />
+                    <div className="space-y-2 text-muted-foreground">
+                        <p className="flex justify-between"><span>Base Cleaning Cost</span> <span>${quote.costBreakdown.baseCleaningCost.toFixed(2)}</span></p>
+                        <p className="flex justify-between"><span>Carpet Type Surcharge</span> <span>${quote.costBreakdown.carpetTypeSurcharge.toFixed(2)}</span></p>
+                        <p className="flex justify-between"><span>Condition Surcharge</span> <span>${quote.costBreakdown.conditionSurcharge.toFixed(2)}</span></p>
+                        <p className="flex justify-between"><span>Pet Stain Treatment</span> <span>${quote.costBreakdown.petStainTreatmentCost.toFixed(2)}</span></p>
+                        <p className="flex justify-between"><span>Odor Removal</span> <span>${quote.costBreakdown.odorRemovalCost.toFixed(2)}</span></p>
+                    </div>
+                </CardContent>
+                <CardFooter>
+                    <p className="text-xs text-muted-foreground">{quote.disclaimer}</p>
+                </CardFooter>
+            </Card>
+        )}
+      </div>
     </div>
   );
 }
