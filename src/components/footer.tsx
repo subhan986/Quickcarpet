@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail, Phone, Droplet } from 'lucide-react';
 import { Button } from './ui/button';
 
 // Simple approximation of the logo
@@ -8,21 +8,7 @@ const Logo = () => (
         <span className="text-2xl font-bold text-white">FIBRE</span>
         <div className="relative flex items-center">
             <span className="text-2xl font-bold text-primary">RINSE</span>
-            <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute -right-5 top-1 h-5 w-5 text-primary"
-            >
-                <path
-                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
-                    fill="currentColor"
-                />
-                <path d="M12 11.5C11.34 11.5 10.73 11.75 10.29 12.19L13.71 15.61C14.15 15.17 14.4 14.56 14.4 13.9C14.4 12.63 13.37 11.6 12.2 11.6L12 11.5Z" fill="currentColor"/>
-                <path d="M7.5 12C7.5 14.48 9.52 16.5 12 16.5C12.79 16.5 13.54 16.28 14.19 15.9L15.61 17.33C14.55 18 13.3 18.2 12 18.2C8.59 18.2 5.8 15.41 5.8 12C5.8 10.7 6 9.45 6.7 8.39L8.1 9.81C7.72 10.46 7.5 11.21 7.5 12Z" fill="currentColor"/>
-            </svg>
+            <Droplet className="absolute -right-6 top-1 h-5 w-5 text-primary fill-current" />
         </div>
     </Link>
 );
