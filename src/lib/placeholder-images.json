@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Hero image for FreshStep Clean",
+      "imageUrl": "https://picsum.photos/seed/freshstep-hero/1200/800",
+      "imageHint": "clean living room"
+    },
+    {
+      "id": "gallery-1-before",
+      "description": "Gallery image before cleaning",
+      "imageUrl": "https://picsum.photos/seed/gallery-before1/600/400",
+      "imageHint": "dirty carpet"
+    },
+    {
+      "id": "gallery-1-after",
+      "description": "Gallery image after cleaning",
+      "imageUrl": "https://picsum.photos/seed/gallery-after1/600/400",
+      "imageHint": "clean carpet"
+    },
+    {
+      "id": "gallery-2-before",
+      "description": "Gallery image before cleaning",
+      "imageUrl": "https://picsum.photos/seed/gallery-before2/600/400",
+      "imageHint": "stained rug"
+    },
+    {
+      "id": "gallery-2-after",
+      "description": "Gallery image after cleaning",
+      "imageUrl": "https://picsum.photos/seed/gallery-after2/600/400",
+      "imageHint": "clean rug"
+    },
+    {
+      "id": "gallery-3-before",
+      "description": "Gallery image before cleaning",
+      "imageUrl": "https://picsum.photos/seed/gallery-before3/600/400",
+      "imageHint": "soiled stairs"
+    },
+    {
+      "id": "gallery-3-after",
+      "description": "Gallery image after cleaning",
+      "imageUrl": "https://picsum.photos/seed/gallery-after3/600/400",
+      "imageHint": "clean stairs"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Customer avatar",
+      "imageUrl": "https://picsum.photos/seed/avatar-1/100/100",
+      "imageHint": "person"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Customer avatar",
+      "imageUrl": "https://picsum.photos/seed/avatar-2/100/100",
+      "imageHint": "person"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Customer avatar",
+      "imageUrl": "https://picsum.photos/seed/avatar-3/100/100",
+      "imageHint": "person"
+    }
+  ]
 }
