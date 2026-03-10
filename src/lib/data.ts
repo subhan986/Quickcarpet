@@ -3,7 +3,7 @@ export const services = [
     {
         title: 'Carpet Cleaning',
         description: 'Our deep steam cleaning process removes dirt, grime, and allergens, leaving your carpets fresh and revitalized. We tackle tough stains and offer deodorizing treatments for a complete clean.',
-        image: '/carpet-cleaning.jpg',
+        image: '/people-housework-housekeeping-concept-close-up-woman-with-legs-vacuum-cleaner-cleaning-carpet-home.jpg',
         imageHint: 'clean carpet',
         details: [
             'Deep steam cleaning',
