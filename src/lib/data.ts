@@ -25,18 +25,6 @@ export const services = [
         ]
     },
     {
-        title: 'Rug Cleaning',
-        description: 'From treasured family heirlooms to modern area rugs, we provide specialized care. We handle Persian, oriental, and other delicate rugs with the utmost precision.',
-        image: 'https://picsum.photos/seed/rug-cleaning-new/600/400',
-        imageHint: 'oriental rug',
-        details: [
-            'Persian & Oriental rug specialists',
-            'Area rug deep cleaning',
-            'Color-safe cleaning treatments',
-            'Fringe cleaning and restoration'
-        ]
-    },
-    {
         title: 'Commercial Cleaning',
         description: 'We offer flexible and reliable cleaning services for businesses. Keep your office, hotel, or retail space looking its best with our professional commercial services.',
         image: '/giorgio-trovato-5TXz228u4eo-unsplash.jpg',
