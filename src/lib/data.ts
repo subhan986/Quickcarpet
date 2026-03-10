@@ -72,13 +72,11 @@ export const reviews = [
 ];
 
 export const locations = [
-    "Banbury",
-    "Bicester",
-    "Brackley",
-    "Chipping Norton",
-    "Daventry",
-    "Leamington Spa",
-    "Oxford",
-    "Southam",
-    "Stratford upon Avon"
+    "London", "Watford", "Harrow", "Uxbridge", "Hounslow", "Slough", "Windsor", 
+    "Maidenhead", "Reading", "Bracknell", "Wokingham", "High Wycombe", "Amersham", 
+    "Chesham", "Beaconsfield", "Aylesbury", "Milton Keynes", "Luton", "Dunstable", 
+    "Hemel Hempstead", "St Albans", "Stevenage", "Bedford", "Banbury", "Bicester", 
+    "Didcot", "Abingdon", "Witney", "Oxford", "Leamington Spa", "Warwick", 
+    "Stratford-upon-Avon", "Coventry", "Rugby", "Northampton", "Solihull", "Dudley", 
+    "Walsall", "Wolverhampton", "Sutton Coldfield", "Birmingham"
 ];

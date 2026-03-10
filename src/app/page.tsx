@@ -87,14 +87,14 @@ export default function Home() {
           <div className="container px-4 md:px-6 h-full">
             <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
               <div className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
-                <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-gray-800">
+                <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-foreground">
                   Professional Cleaning For Carpets, Upholstery And Hard Floors.
                 </h1>
-                <p className="max-w-[600px] text-gray-600 md:text-xl mx-auto lg:mx-0">
+                <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0">
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
                 </p>
                 <div className="mx-auto lg:mx-0">
-                  <Button asChild size="lg" className="font-bold rounded-full text-black">
+                  <Button asChild size="lg" className="font-bold rounded-full">
                     <Link href="#quote">GET A FREE QUOTE</Link>
                   </Button>
                 </div>

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "N&S Cleaning Service",
+  title: "Quick Step Carpets & Upholstery Dry Cleaning",
   description: "Professional Cleaning For Carpets, Upholstery And Hard Floors.",
   icons: [{ rel: "icon", url: "/1.jpg" }],
 };

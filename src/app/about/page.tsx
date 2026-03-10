@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star, Facebook } from 'lucide-react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { reviews } from '@/lib/data';
+import { reviews, locations } from '@/lib/data';
 
 const StarRating = ({ rating, className }: { rating: number, className?: string }) => (
   <div className={`flex gap-0.5 ${className}`}>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
               <div className="space-y-4">
                 <p className="text-muted-foreground md:text-lg">
-                  Welcome to our professional carpet, upholstery, and hard floor cleaning company serving the Banbury area! We are a local cleaning company that specializes in providing top-notch cleaning services for carpets, upholstery, and hard floors. We focus on local carpet cleaning. Our team of experienced technicians are dedicated to delivering high-quality, reliable service to our customers in Banbury and the surrounding areas.
+                  Welcome to Quick Step Carpets & Upholstery Dry Cleaning! We are a professional cleaning company that specializes in providing top-notch cleaning services for carpets, upholstery, and hard floors. Our team of experienced technicians are dedicated to delivering high-quality, reliable service to our customers.
                 </p>
               </div>
               <div className="relative">
@@ -43,7 +43,7 @@ export default function AboutPage() {
                   src="https://picsum.photos/seed/ns-van/600/400"
                   width={600}
                   height={400}
-                  alt="N&S Cleaning Service Van"
+                  alt="Quick Step Cleaning Service Van"
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
                   data-ai-hint="cleaning service van"
                 />
@@ -51,40 +51,36 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-
-        <section className="bg-secondary">
-          <div className="container px-4 md:px-6">
-             <div className="max-w-3xl mx-auto text-center">
-                <p className="text-muted-foreground md:text-lg">
-                  We understand the importance of keeping your carpets, upholstery, and hard floors looking and feeling their best. This is why we offer a variety of services to meet your needs. Whether you're in need of a deep clean, stain removal, or regular maintenance, we've got you covered with our local carpet cleaning expertise. Our services include Carpet cleaning, Upholstery cleaning, Hard floor cleaning, Professional cleaning, Stain removal, Deep cleaning, Carpet maintenance, Floor restoration, and Carpet sanitizing.
-                </p>
-             </div>
-          </div>
-        </section>
         
         <section>
           <div className="container px-4 md:px-6">
-            <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-                <div className="relative order-last md:order-first">
-                    <Image
-                      src="https://picsum.photos/seed/ns-equipment/600/400"
-                      width={600}
-                      height={400}
-                      alt="N&S Cleaning Equipment"
-                      className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-                      data-ai-hint="cleaning equipment"
-                    />
-                </div>
-                <div className="space-y-4">
-                    <p className="text-muted-foreground md:text-lg">
-                        Our local company has been serving the Banbury community for many years. We've built a reputation for providing high-quality, reliable service. We use the latest techniques and equipment. Consequently, your carpets, upholstery, and hard floors are left looking and feeling fresh, clean, and revitalized. Consider us for your local needs.
-                    </p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Our Details</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4 text-muted-foreground">
+                        <p><strong>Company Name:</strong> Quick Step Carpets & Upholstery Dry Cleaning</p>
+                        <p><strong>Phone:</strong> <a href="tel:07806997720" className="hover:text-primary">07806997720</a></p>
+                        <p><strong>Address:</strong> Suite RA01, 195-197 Wood Street, London</p>
+                        <p><strong>Hours:</strong> Monday – Sunday, 8:00 AM – 8:00 PM</p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Our Service Areas</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="columns-2 md:columns-3 text-muted-foreground space-y-1">
+                            {locations.map(location => <li key={location}>{location}</li>)}
+                        </ul>
+                    </CardContent>
+                </Card>
             </div>
           </div>
         </section>
 
-        <section id="reviews" className="w-full bg-background">
+        <section id="reviews" className="w-full bg-secondary">
            <div className="container px-4 md:px-6">
             <div className="text-center space-y-2 mb-12">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">EXCELLENT</h2>

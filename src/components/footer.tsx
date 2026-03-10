@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Facebook, Instagram, Twitter, Mail, Phone, Clock } from 'lucide-react';
 import { Button } from './ui/button';
 import { locations } from '@/lib/data';
+import Image from 'next/image';
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -11,15 +12,11 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Logo = () => (
     <Link href="/" className="flex flex-col items-center text-center md:items-start md:text-left" prefetch={false}>
-      <div className="w-20 h-20 flex items-center justify-center">
-          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 10 C 20 25, 20 75, 50 90" stroke="hsl(var(--primary))" strokeWidth="6"/>
-              <path d="M50 10 C 80 25, 80 75, 50 90" stroke="hsl(var(--primary))" strokeWidth="6" />
-              <text x="50" y="62" textAnchor="middle" fontSize="36" fontWeight="bold" fill="hsl(var(--primary))">N&amp;S</text>
-          </svg>
+      <div className="w-24 h-24 flex items-center justify-center">
+             <Image src="/e.jpg" alt="Quick Step Logo" width={104} height={104} />
       </div>
-      <span className="text-2xl font-bold text-white">N&S</span>
-      <p className="text-sm text-gray-400 tracking-widest -mt-1">CLEANING SERVICE</p>
+      <span className="text-xl font-bold text-white">Quick Step</span>
+      <p className="text-xs text-gray-400 tracking-widest -mt-1">CARPETS & UPHOLSTERY</p>
     </Link>
 );
 
@@ -43,9 +40,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-primary">Cleaning Area</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {locations.map(location => (
+              {locations.slice(0, 8).map(location => (
                 <li key={location}><Link href="#" className="hover:text-primary">{location}</Link></li>
               ))}
+               <li><Link href="/about" className="hover:text-primary">...and more</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -59,13 +57,13 @@ export default function Footer() {
               </Button>
             </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-               <li className="flex items-center justify-center md:justify-start gap-2"><Clock size={16} className="text-primary"/> <span>Mon to Sat - 9am to 7pm</span></li>
-               <li className="flex items-center justify-center md:justify-start gap-2"><Phone size={16} className="text-primary"/> <a href="tel:07856525815" className="hover:text-primary">078 5652 5815</a></li>
+               <li className="flex items-center justify-center md:justify-start gap-2"><Clock size={16} className="text-primary"/> <span>Mon to Sun - 8am to 8pm</span></li>
+               <li className="flex items-center justify-center md:justify-start gap-2"><Phone size={16} className="text-primary"/> <a href="tel:07806997720" className="hover:text-primary">07806 997720</a></li>
             </ul>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-muted-foreground">
-          <p>Copyright &copy; {new Date().getFullYear()} N&S Cleaning Service | Powered by Matysiewicz Studio</p>
+          <p>Copyright &copy; {new Date().getFullYear()} Quick Step Carpets & Upholstery Dry Cleaning | Powered by Matysiewicz Studio</p>
         </div>
       </div>
     </footer>
