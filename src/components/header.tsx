@@ -42,21 +42,8 @@ export default function Header() {
   ];
 
   return (
-    <>
-    <div className="bg-secondary text-secondary-foreground py-1 text-sm">
-      <div className="container mx-auto flex justify-center sm:justify-end items-center gap-6 px-4 md:px-6">
-        <div className="flex items-center gap-2">
-            <Clock size={16}/>
-            <span>Monday to Sunday - 9am to 7pm</span>
-        </div>
-        <div className="hidden sm:flex items-center gap-2">
-          <Phone size={16}/>
-          <span>078 5652 5815</span>
-        </div>
-      </div>
-    </div>
     <header className={cn(`sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md transition-shadow`, isScrolled && 'shadow-md')}>
-      <div className="container flex h-20 items-center px-4 md:px-6">
+      <div className="container flex h-16 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
         </div>
@@ -107,6 +94,5 @@ export default function Header() {
         </Sheet>
       </div>
     </header>
-    </>
   );
 }
