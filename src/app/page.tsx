@@ -84,8 +84,8 @@ export default function Home() {
               />
             </div>
           <div className="container px-4 md:px-6 h-full">
-            <div className="grid lg:grid-cols-2 lg:gap-12 items-center h-full">
-              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10">
+            <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
+              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
                 <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-gray-800">
                   Professional Cleaning For Carpets, Upholstery And Hard Floors.
                 </h1>
@@ -98,9 +98,9 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full mt-8 lg:mt-0">
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[520px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="absolute w-[24rem] h-[24rem] sm:w-[32rem] sm:h-[32rem] lg:w-[32rem] lg:h-[32rem] bg-primary rounded-full" />
+                   <div className="absolute w-[26rem] h-[26rem] sm:w-[34rem] sm:h-[34rem] lg:w-[38rem] lg:h-[38rem] bg-primary rounded-full" />
                    <div className="relative w-full h-full">
                      <Image
                        src="/3.png"
