@@ -13,7 +13,7 @@ const Logo = () => (
              <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M50 10 C 20 25, 20 75, 50 90" stroke="hsl(var(--primary))" strokeWidth="6"/>
                 <path d="M50 10 C 80 25, 80 75, 50 90" stroke="hsl(var(--primary))" strokeWidth="6" />
-                <text x="50" y="62" textAnchor="middle" fontSize="28" fontWeight="bold" fill="hsl(var(--primary-foreground))">QS</text>
+                <text x="50" y="62" textAnchor="middle" fontSize="28" fontWeight="bold" fill="hsl(var(--primary))">QS</text>
             </svg>
         </div>
         <div>
@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <>
-    <div className="bg-secondary text-secondary-foreground py-2 text-sm">
+    <div className="bg-secondary text-secondary-foreground py-1 text-sm">
       <div className="container mx-auto flex justify-center sm:justify-end items-center gap-6 px-4 md:px-6">
         <div className="flex items-center gap-2">
             <Clock size={16}/>
@@ -56,7 +56,7 @@ export default function Header() {
       </div>
     </div>
     <header className={cn(`sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md transition-shadow`, isScrolled && 'shadow-md')}>
-      <div className="container flex h-24 items-center px-4 md:px-6">
+      <div className="container flex h-20 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
         </div>
