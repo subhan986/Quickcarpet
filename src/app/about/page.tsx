@@ -34,7 +34,7 @@ export default function AboutPage() {
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
               <div className="space-y-4">
-                <p className="text-muted-foreground md:text-lg">
+                <p className="text-foreground text-lg md:text-xl">
                   Welcome to Quick Step Carpets & Upholstery Dry Cleaning! We are a professional cleaning company that specializes in providing top-notch cleaning services for carpets, upholstery, and hard floors. Our team of experienced technicians are dedicated to delivering high-quality, reliable service to our customers.
                 </p>
               </div>
