@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/* Hero Section */}
-        <section id="hero" className="relative w-full overflow-hidden bg-white pt-24 lg:pt-32">
+        <section id="hero" className="relative w-full overflow-hidden bg-white pt-20 lg:pt-24">
            <div className="absolute inset-0 z-0">
               <Image
                 src="https://picsum.photos/seed/cleaning-van/1200/800"
@@ -98,9 +98,9 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[420px] sm:h-[520px] lg:h-[620px] w-full mt-8 lg:mt-0">
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[520px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="absolute w-[30rem] h-[30rem] sm:w-[38rem] sm:h-[38rem] lg:w-[42rem] lg:h-[42rem] bg-primary rounded-full" />
+                   <div className="absolute w-[24rem] h-[24rem] sm:w-[30rem] sm:h-[30rem] lg:w-[34rem] lg:h-[34rem] bg-primary rounded-full" />
                    <div className="relative w-full h-full">
                      <Image
                        src="/3.png"
