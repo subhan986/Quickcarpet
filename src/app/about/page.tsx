@@ -77,35 +77,8 @@ export default function AboutPage() {
           </div>
         </section>
         
-        {/* Team Introduction */}
-        <section>
-          <div className="container px-4 md:px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter">Meet Our Team</h2>
-              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">The dedicated professionals behind our success.</p>
-            </div>
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-              {team.map((member) => (
-                <Card key={member.name} className="overflow-hidden text-center">
-                  <div className="bg-muted p-6">
-                    <Avatar className="mx-auto h-32 w-32 border-4 border-background">
-                      <AvatarImage src={member.avatar} alt={member.name} data-ai-hint="person portrait" />
-                      <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold">{member.name}</h3>
-                    <p className="text-primary">{member.role}</p>
-                    <p className="mt-2 text-muted-foreground">{member.bio}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Certifications */}
-        <section className="w-full bg-secondary">
+        <section className="w-full">
           <div className="container px-4 md:px-6">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter">Our Certifications & Accreditations</h2>
