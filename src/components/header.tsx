@@ -36,7 +36,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={cn(`sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md transition-shadow`, isScrolled && 'shadow-md')}>
+    <header className={cn(`sticky top-0 z-50 w-full bg-background transition-shadow`, isScrolled && 'shadow-md')}>
       <div className="container flex h-24 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
