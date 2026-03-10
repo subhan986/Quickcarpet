@@ -30,7 +30,7 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="/giorgio-trovato-5TXz228u4eo-unsplash.jpg"
+                  src="/pexels-michelangelo-buonarroti-4176300.jpg"
                   width={600}
                   height={400}
                   alt="Professional carpet cleaning"
