@@ -33,12 +33,12 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="https://picsum.photos/seed/company-history/600/400"
+                  src="https://picsum.photos/seed/carpet-cleaning-team/600/400"
                   width={600}
                   height={400}
                   alt="Company history collage"
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-                  data-ai-hint="cleaning van team"
+                  data-ai-hint="carpet cleaning team"
                 />
               </div>
             </div>

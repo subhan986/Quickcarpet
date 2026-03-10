@@ -3,7 +3,7 @@ export const services = [
     {
         title: 'Carpet Cleaning',
         description: 'Our deep steam cleaning process removes dirt, grime, and allergens, leaving your carpets fresh and revitalized. We tackle tough stains and offer deodorizing treatments for a complete clean.',
-        image: 'https://picsum.photos/seed/carpet-cleaning/600/400',
+        image: '/carpet-cleaning.jpg',
         imageHint: 'clean carpet',
         details: [
             'Deep steam cleaning',
@@ -15,7 +15,7 @@ export const services = [
     {
         title: 'Upholstery Cleaning',
         description: 'We restore the beauty and freshness of your furniture. Our gentle yet effective cleaning methods work on sofas, chairs, mattresses, and more.',
-        image: 'https://picsum.photos/seed/upholstery-cleaning/600/400',
+        image: 'https://picsum.photos/seed/clean-sofa-upholstery/600/400',
         imageHint: 'clean sofa',
         details: [
             'Sofas, armchairs, and dining chairs',
@@ -27,7 +27,7 @@ export const services = [
     {
         title: 'Rug Cleaning',
         description: 'From treasured family heirlooms to modern area rugs, we provide specialized care. We handle Persian, oriental, and other delicate rugs with the utmost precision.',
-        image: 'https://picsum.photos/seed/rug-cleaning/600/400',
+        image: 'https://picsum.photos/seed/cleaned-rug/600/400',
         imageHint: 'oriental rug',
         details: [
             'Persian & Oriental rug specialists',
@@ -39,7 +39,7 @@ export const services = [
     {
         title: 'Commercial Cleaning',
         description: 'We offer flexible and reliable cleaning services for businesses. Keep your office, hotel, or retail space looking its best with our professional commercial services.',
-        image: 'https://picsum.photos/seed/commercial-cleaning/600/400',
+        image: 'https://picsum.photos/seed/commercial-carpet-cleaning/600/400',
         imageHint: 'clean office',
         details: [
             'Office and corporate spaces',
