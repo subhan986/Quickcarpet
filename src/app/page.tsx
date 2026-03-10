@@ -101,7 +101,6 @@ export default function Home() {
               </div>
               <div className="relative h-[280px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="absolute w-[28rem] h-[28rem] sm:w-[38rem] sm:h-[38rem] lg:w-[42rem] lg:h-[42rem] bg-primary rounded-full" />
                    <div className="relative w-full h-full">
                      <Image
                        src="/3.png"
@@ -109,7 +108,7 @@ export default function Home() {
                        objectFit="contain"
                        objectPosition="bottom center"
                        alt="Cleaning technician"
-                       className="z-10"
+                       className="z-10 drop-shadow-2xl"
                      />
                    </div>
                 </div>
