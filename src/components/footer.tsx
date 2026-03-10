@@ -22,7 +22,7 @@ export default function Footer() {
               Ready to experience the Quick Step difference? Get in touch with us today!
             </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-muted-foreground">
@@ -47,12 +47,6 @@ export default function Footer() {
               <li className="flex items-center gap-2"><Mail size={16} className="text-primary"/> <a href="mailto:info@quickstepcleaning.co.uk" className="hover:text-primary">info@quickstepcleaning.co.uk</a></li>
                <li className="flex items-center gap-2"><Clock size={16} className="text-primary"/> <span>Open Monday to Sunday</span></li>
             </ul>
-          </div>
-          <div className="space-y-4">
-             <h4 className="text-lg font-semibold text-primary">Service Area</h4>
-             <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">
-                Map Placeholder
-             </div>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-muted-foreground">
