@@ -76,7 +76,7 @@ export default function Home() {
         <section id="hero" className="relative w-full overflow-hidden bg-white pt-12 lg:pt-16 pb-0">
            <div className="absolute inset-0 z-0">
               <Image
-                src="https://picsum.photos/seed/cleaning-van/1200/800"
+                src="/Gemini_Generated_Image_vt8051vt8051vt80.png"
                 layout="fill"
                 objectFit="cover"
                 alt="Cleaning service van background"
@@ -187,5 +187,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
