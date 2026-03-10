@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -40,12 +41,12 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="https://picsum.photos/seed/ns-van/600/400"
+                  src="/giorgio-trovato-5TXz228u4eo-unsplash.jpg"
                   width={600}
                   height={400}
-                  alt="Quick Step Cleaning Service Van"
+                  alt="Modern living room with clean carpet"
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-                  data-ai-hint="cleaning service van"
+                  data-ai-hint="clean carpet living room"
                 />
               </div>
             </div>
