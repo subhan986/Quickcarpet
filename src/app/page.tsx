@@ -80,7 +80,7 @@ export default function Home() {
                 layout="fill"
                 objectFit="cover"
                 alt="Cleaning service van background"
-                className="opacity-10"
+                className="opacity-20"
                 data-ai-hint="cleaning service van"
               />
             </div>
@@ -187,6 +187,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
