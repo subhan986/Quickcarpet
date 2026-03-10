@@ -9,13 +9,9 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 const Logo = () => (
-    <Link href="/" className="flex items-center gap-2" prefetch={false}>
-        <div className="w-12 h-12 flex items-center justify-center">
-             <Image src="/g.jpg" alt="Quick Step Logo" width={48} height={48} />
-        </div>
-        <div>
-            <span className="text-xl font-bold text-gray-800">Quick Step</span>
-            <p className="text-xs text-gray-500 tracking-wide">CARPETS & UPHOLSTERY</p>
+    <Link href="/" className="flex items-center" prefetch={false}>
+        <div className="w-16 h-16 flex items-center justify-center">
+             <Image src="/g.jpg" alt="Quick Step Logo" width={64} height={64} />
         </div>
     </Link>
 );
@@ -40,7 +36,7 @@ export default function Header() {
 
   return (
     <header className={cn(`sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md transition-shadow`, isScrolled && 'shadow-md')}>
-      <div className="container flex h-16 items-center px-4 md:px-6">
+      <div className="container flex h-20 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
         </div>
