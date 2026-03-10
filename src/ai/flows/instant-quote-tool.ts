@@ -45,7 +45,7 @@ const instantQuotePrompt = ai.definePrompt({
   name: 'instantQuotePrompt',
   input: { schema: InstantQuoteInputSchema },
   output: { schema: InstantQuoteOutputSchema },
-  prompt: `You are an expert carpet cleaning estimator for Fibre Rinse. Your task is to calculate an instant estimated cost for carpet cleaning services based on the provided details.
+  prompt: `You are an expert carpet cleaning estimator for Quick Step. Your task is to calculate an instant estimated cost for carpet cleaning services based on the provided details.
 
 **Pricing Rules:**
 1.  **Standard Base Rate**: 0.50 per square foot.

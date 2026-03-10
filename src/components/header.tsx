@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, Mail, Phone, Droplet } from "lucide-react";
+import { Menu, Mail, Phone, Footprints, Clock } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
 
 // Simple approximation of the logo
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-        <span className="text-2xl font-bold text-white">FIBRE</span>
+        <span className="text-2xl font-bold text-white">QUICK</span>
         <div className="relative flex items-center">
-            <span className="text-2xl font-bold text-primary">RINSE</span>
-            <Droplet className="absolute -right-6 top-1 h-5 w-5 text-primary fill-current" />
+            <span className="text-2xl font-bold text-primary">STEP</span>
+            <Footprints className="absolute -right-7 top-1 h-6 w-6 text-primary fill-current" />
         </div>
     </Link>
 );
@@ -48,11 +48,12 @@ export default function Header() {
           </div>
            <div className="flex items-center gap-2">
             <Mail size={14}/>
-            <span>info@fibrerinse.com.au</span>
+            <span>info@quickstep.com.au</span>
           </div>
         </div>
-        <div>
-          {/* Social Icons can go here */}
+        <div className="flex items-center gap-2">
+          <Clock size={14} />
+          <span>Monday to Sunday</span>
         </div>
       </div>
     </div>

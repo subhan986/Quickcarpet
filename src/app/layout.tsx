@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fibre Rinse - Professional Carpet Cleaning",
-  description: "Professional carpet cleaning services for Melbourne and surrounding suburbs.",
+  title: "Quick Step Carpets & Upholstery Dry Cleaning",
+  description: "Carpets & Upholstery Dry Cleaning. Open Monday to Sunday.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

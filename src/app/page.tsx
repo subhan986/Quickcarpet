@@ -50,8 +50,8 @@ export default function Home() {
             data-ai-hint="clean carpet macro shot"
           />
           <div className="relative z-10 space-y-4 px-4">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">FIBRE RINSE</h1>
-            <p className="text-lg md:text-2xl font-semibold">PROFESSIONAL CARPET CLEANING</p>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">QUICK STEP</h1>
+            <p className="text-lg md:text-2xl font-semibold">CARPETS & UPHOLSTERY DRY CLEANING</p>
             <p className="text-md md:text-lg">Servicing Melbourne and surrounding suburbs</p>
             <Button asChild size="lg" className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
               <Link href="#quote">GET QUOTE</Link>
@@ -85,7 +85,7 @@ export default function Home() {
         <section id="about" className="w-full bg-background text-foreground">
            <div className="container px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
              <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">WHY CHOOSE FIBRE RINSE?</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">WHY CHOOSE QUICK STEP?</h2>
                 <p className="text-muted-foreground">We are the only company you will need to get your carpets and upholstery cleaned.</p>
                 <ul className="space-y-3">
                   {whyChooseUs.map((reason, index) => (
