@@ -17,8 +17,8 @@ const Logo = () => (
             </svg>
         </div>
         <div>
-            <span className="text-3xl font-extrabold text-gray-800">N&S</span>
-            <p className="text-xs text-gray-500 tracking-widest -mt-1">CLEANING SERVICE</p>
+            <span className="text-3xl font-extrabold text-gray-800">Quick Step</span>
+            <p className="text-xs text-gray-500 tracking-widest -mt-1">CARPETS & UPHOLSTERY</p>
         </div>
     </Link>
 );
@@ -38,7 +38,6 @@ export default function Header() {
   const navLinks = [
     { href: "#about", label: "ABOUT US" },
     { href: "#services", label: "SERVICES & PRICING" },
-    { href: "#", label: "CLEANING AREA" },
     { href: "#contact", label: "CONTACT" },
   ];
 
@@ -48,7 +47,7 @@ export default function Header() {
       <div className="container mx-auto flex justify-center sm:justify-end items-center gap-6 px-4 md:px-6">
         <div className="flex items-center gap-2">
             <Clock size={16}/>
-            <span>Mon to Sat - 9am to 7pm</span>
+            <span>Open Monday to Sunday</span>
         </div>
         <div className="hidden sm:flex items-center gap-2">
           <Phone size={16}/>

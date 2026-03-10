@@ -6,8 +6,8 @@ import { Button } from './ui/button';
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
       <div>
-        <span className="text-3xl font-extrabold text-white">N&S</span>
-        <p className="text-xs text-gray-400 tracking-widest -mt-1">CLEANING SERVICE</p>
+        <span className="text-3xl font-extrabold text-white">Quick Step</span>
+        <p className="text-xs text-gray-400 tracking-widest -mt-1">CARPETS & UPHOLSTERY</p>
       </div>
     </Link>
 );
@@ -19,7 +19,7 @@ export default function Footer() {
          <div className="text-center space-y-2 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">CONTACT US</h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
-              Ready to experience the N&S Cleaning Service difference? Get in touch with us today!
+              Ready to experience the Quick Step difference? Get in touch with us today!
             </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -44,8 +44,8 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-primary">Contact Details</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2"><Phone size={16} className="text-primary"/> <a href="tel:07856525815" className="hover:text-primary">078 5652 5815</a></li>
-              <li className="flex items-center gap-2"><Mail size={16} className="text-primary"/> <a href="mailto:info@nscleaningservice.co.uk" className="hover:text-primary">info@nscleaningservice.co.uk</a></li>
-               <li className="flex items-center gap-2"><Clock size={16} className="text-primary"/> <span>Mon to Sat - 9am to 7pm</span></li>
+              <li className="flex items-center gap-2"><Mail size={16} className="text-primary"/> <a href="mailto:info@quickstepcleaning.co.uk" className="hover:text-primary">info@quickstepcleaning.co.uk</a></li>
+               <li className="flex items-center gap-2"><Clock size={16} className="text-primary"/> <span>Open Monday to Sunday</span></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} N&S Cleaning Service. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Quick Step Carpets & Upholstery Dry Cleaning. All rights reserved.</p>
         </div>
       </div>
     </footer>
