@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/* Hero Section */}
-        <section id="hero" className="relative w-full overflow-hidden bg-white pt-20 lg:pt-24">
+        <section id="hero" className="relative w-full overflow-hidden bg-white pt-20 lg:pt-24 pb-0">
            <div className="absolute inset-0 z-0">
               <Image
                 src="https://picsum.photos/seed/cleaning-van/1200/800"
