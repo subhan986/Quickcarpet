@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -93,14 +94,14 @@ export default function Home() {
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
                 </p>
                 <div className="mx-auto lg:mx-0">
-                  <Button asChild size="lg" className="font-bold">
+                  <Button asChild size="lg" className="font-bold rounded-full text-black">
                     <Link href="#quote">GET A FREE QUOTE</Link>
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[320px] sm:h-[420px] lg:h-[520px] w-full mt-8 lg:mt-0">
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[720px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="absolute w-[24rem] h-[24rem] sm:w-[30rem] sm:h-[30rem] lg:w-[34rem] lg:h-[34rem] bg-primary rounded-full" />
+                   <div className="absolute w-[36rem] h-[36rem] sm:w-[50rem] sm:h-[50rem] lg:w-[72rem] lg:h-[72rem] bg-primary rounded-full" />
                    <div className="relative w-full h-full">
                      <Image
                        src="/3.png"
@@ -215,3 +216,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
