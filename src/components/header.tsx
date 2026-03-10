@@ -3,17 +3,22 @@
 import Link from "next/link";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, Mail, Phone, Footprints, Clock } from "lucide-react";
+import { Menu, Mail, Phone, Clock, ArrowRight } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
 
-// Simple approximation of the logo
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
-        <span className="text-2xl font-bold text-white">QUICK</span>
-        <div className="relative flex items-center">
-            <span className="text-2xl font-bold text-primary">STEP</span>
-            <Footprints className="absolute -right-7 top-1 h-6 w-6 text-primary fill-current" />
+        <div className="w-12 h-12 flex items-center justify-center">
+            <svg viewBox="0 0 100 100" className="w-10 h-10">
+                <circle cx="50" cy="50" r="48" fill="hsl(var(--primary))" />
+                <path d="M 25 50 Q 37.5 30, 50 50 T 75 50" stroke="white" strokeWidth="5" fill="none" />
+                <path d="M 25 55 Q 37.5 35, 50 55 T 75 55" stroke="white" strokeWidth="5" fill="none" />
+            </svg>
+        </div>
+        <div>
+            <span className="text-3xl font-extrabold text-gray-800">N&S</span>
+            <p className="text-xs text-gray-500 tracking-widest -mt-1">CLEANING SERVICE</p>
         </div>
     </Link>
 );
@@ -31,58 +36,56 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#about", label: "About" },
-    { href: "#reviews", label: "Reviews" },
-    { href: "#contact", label: "Contact" },
+    { href: "#about", label: "ABOUT US" },
+    { href: "#services", label: "SERVICES & PRICING" },
+    { href: "#", label: "CLEANING AREA" },
+    { href: "#contact", label: "CONTACT" },
   ];
 
   return (
     <>
-    <div className="bg-[#0A182E] text-white py-2">
-      <div className="container mx-auto flex justify-between items-center text-xs px-4 md:px-6">
-        <div className="flex items-center gap-4">
-           <div className="flex items-center gap-2">
-            <Phone size={14}/>
-            <span>0412 345 678</span>
-          </div>
-           <div className="flex items-center gap-2">
-            <Mail size={14}/>
-            <span>info@quickstep.com.au</span>
-          </div>
-        </div>
+    <div className="bg-[#2B3A4F] text-white py-2 text-sm">
+      <div className="container mx-auto flex justify-center sm:justify-end items-center gap-6 px-4 md:px-6">
         <div className="flex items-center gap-2">
-          <Clock size={14} />
-          <span>Monday to Sunday</span>
+            <Clock size={16}/>
+            <span>Mon to Sat - 9am to 7pm</span>
+        </div>
+        <div className="hidden sm:flex items-center gap-2">
+          <Phone size={16}/>
+          <span>078 5652 5815</span>
         </div>
       </div>
     </div>
-    <header className={cn(`sticky top-0 z-50 w-full transition-all`, isScrolled ? 'bg-[#0A182E]/95 backdrop-blur' : 'bg-[#0A182E]')}>
-      <div className="container flex h-20 items-center px-4 md:px-6">
-        <Logo />
-        <nav className="hidden flex-1 items-center justify-end space-x-6 text-sm font-medium md:flex">
+    <header className={cn(`sticky top-0 z-50 w-full bg-white transition-shadow`, isScrolled && 'shadow-md')}>
+      <div className="container flex h-24 items-center px-4 md:px-6">
+        <div className="md:w-1/4">
+          <Logo />
+        </div>
+        <nav className="hidden flex-1 items-center justify-center space-x-8 text-sm font-medium md:flex">
           {navLinks.map(link => (
              <Link
               key={link.href}
               href={link.href}
-              className="text-white transition-colors hover:text-primary"
+              className="text-gray-600 transition-colors hover:text-primary"
               prefetch={false}
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild>
-            <Link href="#quote">Get Quote</Link>
-          </Button>
         </nav>
+        <div className="hidden md:flex w-1/4 justify-end">
+          <Button asChild className="font-semibold">
+            <Link href="#quote">REQUEST A QUOTE <ArrowRight className="ml-2 h-4 w-4" /></Link>
+          </Button>
+        </div>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="ml-auto md:hidden bg-transparent border-primary text-primary hover:bg-primary hover:text-black">
+            <Button variant="outline" size="icon" className="ml-auto md:hidden">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-[#0A182E] text-white border-l-primary">
+          <SheetContent side="right" className="bg-white text-gray-800">
             <div className="py-6">
              <Logo />
             </div>
@@ -97,8 +100,8 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-                <Button asChild className="mt-4">
-                    <Link href="#quote">Get Quote</Link>
+                <Button asChild className="mt-4 font-semibold">
+                    <Link href="#quote">REQUEST A QUOTE <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
             </div>
           </SheetContent>
