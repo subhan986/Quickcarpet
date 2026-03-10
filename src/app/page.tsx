@@ -103,13 +103,12 @@ export default function Home() {
                    <div className="absolute w-[24rem] h-[24rem] sm:w-[32rem] sm:h-[32rem] lg:w-[32rem] lg:h-[32rem] bg-primary rounded-full" />
                    <div className="relative w-full h-full">
                      <Image
-                       src="https://picsum.photos/seed/cleaning-tech/600/800"
+                       src="/3.png"
                        layout="fill"
                        objectFit="contain"
                        objectPosition="bottom center"
                        alt="Cleaning technician"
                        className="z-10"
-                       data-ai-hint="cleaning service technician professional"
                      />
                    </div>
                 </div>
