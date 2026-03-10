@@ -9,9 +9,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { services, reviews } from '@/lib/data';
+import { reviews } from '@/lib/data';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import InstantQuoteForm from '@/components/instant-quote-form';
@@ -27,7 +27,7 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" {...props}>
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.885-.002 2.024.63 3.965 1.739 5.625l-1.168 4.244 4.387-1.149z" />
-        <path d="M15.426 14.229c-.116-.243-.335-.411-.574-.44l-1.973-.448c-.201-.045-.402.016-.541.155-.138.139-.232.32-.232.515v.011c.01.244-.093.483-.289.654-.196.171-.47.288-.747.333-.276.045-.536-.016-.723-.155l-.011-.01c-1.631-.99-2.83-2.443-3.056-2.527-.226-.084-.442.016-.574.223-.133.208-.431.686-.531.818-.099.133-.231.155-.38.11l-1.117-.309c-.289-.084-.574-.265-.809-.515-.591-.626-1.042-1.393-1.35-2.248-.099-.265-.024-.559.189-.756l.484-.448.006-.005c.164-.15.259-.37.232-.591l-.011-.011c-.028-.22-.122-.422-.262-.574-.14-.151-.341-.244-.559-.244l-.693.021c-.265.005-.515.122-.686.309-.341.373-.639.833-.809 1.348-.151.483-.244 1.01-.22 1.536.024.526.164 1.042.38 1.536l.011.011c.541 1.259 1.408 2.373 2.527 3.299.782.639 1.631 1.117 2.65 1.458.289.099.574.155.882.155.457 0 .902-.122 1.288-.355.265-.163.483-.397.639-.686l.011-.011c.084-.179.14-.37.155-.564.016-.193-.016-.385-.099-.564l-.99-1.201z" />
+        <path d="M15.426 14.229c-.116-.243-.335-.411-.574-.44l-1.973-.448c-.201-.045-.402.016-.541.155-.138.139-.232.32-.232.515v.011c.01.244-.093.483-.289.654-.196.171-.47.288-.747.333-.276.045-.536-.016-.723-.155l-.011-.01c-1.631-.99-2.83-2.443-3.056-2.527-.226-.084-.442.016-.574.223-.133.208-.431.686-.531.818-.099.133-.231.155-.38.11l-1.117-.309c-.289-.084-.574-.265-.809-.515-.591-.626-1.042-1.393-1.35-2.248-.099-.265-.024-.559.189-.756l.484-.448.006-.005c.164-.15.259-.37.232-.591l-.011-.011c-.028-.22-.122-.422-.262-.574-.14-.151-.341-.244-.559-.244l-.693.021c-.265.005-.515.122-.686.309-.341.373-.639.833-.809 1.348-.151.483-.244 1.01-.22 1.536.024.526.164 1.042.38 1.536l.011-.011c.541 1.259 1.408 2.373 2.527 3.299.782.639 1.631 1.117 2.65 1.458.289.099.574.155.882.155.457 0 .902-.122 1.288-.355.265-.163.483-.397.639-.686l.011-.011c.084-.179.14-.37.155-.564.016-.193-.016-.385-.099-.564l-.99-1.201z" />
     </svg>
 );
 
@@ -117,35 +117,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Our Services */}
-        <section id="services" className="w-full bg-secondary">
-          <div className="container px-4 md:px-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              {services.map(service => (
-                <Card key={service.title} className="flex flex-col">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-center">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow space-y-4">
-                    <p className="text-muted-foreground text-center">{service.description}</p>
-                    <ul className="space-y-2 text-muted-foreground list-disc list-inside">
-                      {service.items.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <div className="p-6 pt-0">
-                    <Button asChild className="w-full font-bold">
-                        <Link href="#quote">ASK FOR QUOTE</Link>
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
 
         {/* Reviews */}
         <section id="reviews" className="w-full bg-background">

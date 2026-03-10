@@ -33,7 +33,7 @@ export default function Footer() {
              <h4 className="text-lg font-semibold text-primary">About</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
-                <li><Link href="/#services" className="hover:text-primary">Services & Pricing</Link></li>
+                <li><Link href="/services" className="hover:text-primary">Services & Pricing</Link></li>
                 <li><Link href="#contact" className="hover:text-primary">Contact</Link></li>
               </ul>
           </div>
@@ -41,9 +41,9 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-primary">Cleaning Area</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {locations.slice(0, 8).map(location => (
-                <li key={location}><Link href="#" className="hover:text-primary">{location}</Link></li>
+                <li key={location}><Link href="/cleaning-area" className="hover:text-primary">{location}</Link></li>
               ))}
-               <li><Link href="/about" className="hover:text-primary">...and more</Link></li>
+               <li><Link href="/cleaning-area" className="hover:text-primary">...and more</Link></li>
             </ul>
           </div>
           <div className="space-y-4">

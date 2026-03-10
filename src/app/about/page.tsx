@@ -1,141 +1,128 @@
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Star, Facebook } from 'lucide-react';
+import { BadgeCheck, ShieldCheck, Heart, Users, Star } from 'lucide-react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { reviews, locations } from '@/lib/data';
-
-const StarRating = ({ rating, className }: { rating: number, className?: string }) => (
-  <div className={`flex gap-0.5 ${className}`}>
-    {Array.from({ length: 5 }).map((_, i) => (
-      <Star key={i} className={`h-5 w-5 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
-    ))}
-  </div>
-);
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { team, certifications } from '@/lib/data';
 
 export default function AboutPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="w-full bg-secondary py-12 md:py-16">
-          <div className="container px-4 md:px-6">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">About Us</h1>
-            </div>
+        <section className="w-full bg-secondary py-16 md:py-24">
+          <div className="container px-4 md:px-6 text-center">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">About Quick Step</h1>
+            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
+              Your trusted partner for professional carpet and upholstery cleaning.
+            </p>
           </div>
         </section>
-        
+
+        {/* Who We Are */}
         <section>
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
               <div className="space-y-4">
-                <p className="text-foreground text-lg md:text-xl">
-                  Welcome to Quick Step Carpets & Upholstery Dry Cleaning! We are a professional cleaning company that specializes in providing top-notch cleaning services for carpets, upholstery, and hard floors. Our team of experienced technicians are dedicated to delivering high-quality, reliable service to our customers.
+                <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
+                <p className="text-muted-foreground text-lg">
+                  Founded over a decade ago, Quick Step was born from a passion for bringing new life to homes and businesses through pristine cleaning. We started as a small local service and have since grown into a trusted name in the industry, known for our reliability and exceptional results. Our mission is to provide a healthier, cleaner environment for our clients through professional and eco-friendly cleaning services.
                 </p>
               </div>
               <div className="relative">
                 <Image
-                  src="/giorgio-trovato-5TXz228u4eo-unsplash.jpg"
+                  src="https://picsum.photos/seed/company-history/600/400"
                   width={600}
                   height={400}
-                  alt="Modern living room with clean carpet"
+                  alt="Company history collage"
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-                  data-ai-hint="clean carpet living room"
+                  data-ai-hint="cleaning van team"
                 />
               </div>
             </div>
           </div>
         </section>
+
+        {/* Our Values */}
+        <section className="w-full bg-secondary">
+          <div className="container px-4 md:px-6">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter">Our Core Values</h2>
+              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">What drives us to deliver the best service possible.</p>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="text-center">
+                <ShieldCheck className="mx-auto h-12 w-12 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">Trust & Reliability</h3>
+                <p className="mt-2 text-muted-foreground">We are committed to being a service you can count on, showing up on time and delivering consistent, high-quality results.</p>
+              </div>
+              <div className="text-center">
+                <Heart className="mx-auto h-12 w-12 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">Eco-Friendly</h3>
+                <p className="mt-2 text-muted-foreground">We use safe, non-toxic, and environmentally friendly cleaning solutions to protect your family, pets, and the planet.</p>
+              </div>
+              <div className="text-center">
+                <Star className="mx-auto h-12 w-12 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">Attention to Detail</h3>
+                <p className="mt-2 text-muted-foreground">From the initial inspection to the final touches, we pride ourselves on our meticulous approach to every job.</p>
+              </div>
+               <div className="text-center">
+                <BadgeCheck className="mx-auto h-12 w-12 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">Satisfaction Guarantee</h3>
+                <p className="mt-2 text-muted-foreground">Your satisfaction is our priority. If you're not happy with our work, we'll make it right. That's our promise.</p>
+              </div>
+            </div>
+          </div>
+        </section>
         
+        {/* Team Introduction */}
         <section>
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Our Details</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-muted-foreground">
-                        <p><strong>Company Name:</strong> Quick Step Carpets & Upholstery Dry Cleaning</p>
-                        <p><strong>Phone:</strong> <a href="tel:07806997720" className="hover:text-primary">07806997720</a></p>
-                        <p><strong>Address:</strong> Suite RA01, 195-197 Wood Street, London</p>
-                        <p><strong>Hours:</strong> Monday – Sunday, 8:00 AM – 8:00 PM</p>
-                    </CardContent>
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter">Meet Our Team</h2>
+              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">The dedicated professionals behind our success.</p>
+            </div>
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+              {team.map((member) => (
+                <Card key={member.name} className="overflow-hidden text-center">
+                  <div className="bg-muted p-6">
+                    <Avatar className="mx-auto h-32 w-32 border-4 border-background">
+                      <AvatarImage src={member.avatar} alt={member.name} data-ai-hint="person portrait" />
+                      <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold">{member.name}</h3>
+                    <p className="text-primary">{member.role}</p>
+                    <p className="mt-2 text-muted-foreground">{member.bio}</p>
+                  </CardContent>
                 </Card>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Our Service Areas</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <ul className="columns-2 md:columns-3 text-muted-foreground space-y-1">
-                            {locations.map(location => <li key={location}>{location}</li>)}
-                        </ul>
-                    </CardContent>
-                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="reviews" className="w-full bg-secondary">
-           <div className="container px-4 md:px-6">
-            <div className="text-center space-y-2 mb-12">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">EXCELLENT</h2>
-                <StarRating rating={5} className="justify-center"/>
-                <p className="text-muted-foreground">Based on {reviews.length} reviews</p>
-                <div className="flex items-center justify-center gap-2">
-                    <Facebook className="w-5 h-5 text-[#1877F2]" />
-                    <span className="font-bold text-lg text-[#1877F2]">facebook</span>
-                </div>
+        {/* Certifications */}
+        <section className="w-full bg-secondary">
+          <div className="container px-4 md:px-6">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter">Our Certifications & Accreditations</h2>
+              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">Proof of our commitment to quality and professionalism.</p>
             </div>
-            <Carousel
-              opts={{ loop: true }}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent>
-                {reviews.map((review, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                        <Card className="h-full">
-                            <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
-                                <div className="flex items-start gap-4">
-                                    <Avatar>
-                                        <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
-                                        <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
-                                    </Avatar>
-                                    <div className="flex-1">
-                                      <div className="flex justify-between items-start">
-                                        <div>
-                                          <p className="font-semibold">{review.author}</p>
-                                          <p className="text-sm text-muted-foreground">{review.time}</p>
-                                        </div>
-                                        <Facebook className="w-5 h-5 text-[#1877F2]" />
-                                      </div>
-                                      <StarRating rating={review.rating} className="mt-2" />
-                                    </div>
-                                </div>
-                                <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
-                                <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
-                            </CardContent>
-                        </Card>
-                    </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -left-4" />
-              <CarouselNext className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -right-4" />
-            </Carousel>
-           </div>
-        </section>
-
-        <section>
-            <div className="container flex justify-center">
-                <Button asChild size="lg" className="font-bold rounded-full">
-                    <Link href="/#quote">GET A FREE QUOTE</Link>
-                </Button>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {certifications.map((cert) => (
+                <Card key={cert.name}>
+                  <CardContent className="flex flex-col items-center p-6 text-center">
+                    <Image src={cert.logo} alt={`${cert.name} Logo`} width={120} height={80} className="mb-4 object-contain" data-ai-hint="certification logo" />
+                    <h3 className="text-lg font-bold">{cert.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{cert.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
+          </div>
         </section>
       </main>
       <Footer />

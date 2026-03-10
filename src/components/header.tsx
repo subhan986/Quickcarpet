@@ -4,22 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, ArrowRight } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { locations } from "@/lib/data";
 
 const Logo = () => (
     <Link href="/" className="flex items-center" prefetch={false}>
@@ -41,10 +28,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks: ({href?: string, label: string, isDropdown?: boolean})[] = [
+  const navLinks = [
     { href: "/about", label: "ABOUT US" },
-    { href: "/#services", label: "SERVICES & PRICING" },
-    { label: "CLEANING AREA", isDropdown: true },
+    { href: "/services", label: "SERVICES & PRICING" },
+    { href: "/cleaning-area", label: "CLEANING AREA" },
     { href: "/#contact", label: "CONTACT" },
   ];
 
@@ -55,35 +42,16 @@ export default function Header() {
           <Logo />
         </div>
         <nav className="hidden flex-1 items-center justify-center space-x-8 text-sm font-medium md:flex">
-          {navLinks.map(link => {
-            if (link.isDropdown) {
-              return (
-                <DropdownMenu key={link.label}>
-                  <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 transition-colors hover:text-primary focus:outline-none">
-                    {link.label}
-                    <ChevronDown className="h-4 w-4" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {locations.map((location) => (
-                      <DropdownMenuItem key={location} asChild>
-                        <Link href="#">{location}</Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              )
-            }
-            return (
+          {navLinks.map(link => (
               <Link
                 key={link.label}
-                href={link.href!}
+                href={link.href}
                 className="text-gray-600 transition-colors hover:text-primary"
                 prefetch={false}
               >
                 {link.label}
               </Link>
-            )
-          })}
+          ))}
         </nav>
         <div className="hidden md:flex w-1/4 justify-end">
           <Button asChild className="font-semibold">
@@ -102,36 +70,16 @@ export default function Header() {
              <Logo />
             </div>
             <div className="grid gap-4 py-6">
-              {navLinks.map(link => {
-                if (link.isDropdown) {
-                  return (
-                    <Accordion key={link.label} type="single" collapsible className="w-full">
-                      <AccordionItem value="cleaning-area" className="border-b-0">
-                        <AccordionTrigger className="flex w-full items-center py-2 text-lg font-semibold hover:no-underline">
-                          {link.label}
-                        </AccordionTrigger>
-                        <AccordionContent className="pl-4">
-                          {locations.map((location) => (
-                            <Link key={location} href="#" className="block py-2 text-muted-foreground">
-                              {location}
-                            </Link>
-                          ))}
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  )
-                }
-                return (
+              {navLinks.map(link => (
                   <Link
                     key={link.label}
-                    href={link.href!}
+                    href={link.href}
                     className="flex w-full items-center py-2 text-lg font-semibold"
                     prefetch={false}
                   >
                     {link.label}
                   </Link>
-                )
-              })}
+              ))}
                 <Button asChild className="mt-4 font-semibold">
                     <Link href="/#quote">REQUEST A QUOTE <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
