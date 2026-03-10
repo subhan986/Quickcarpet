@@ -42,10 +42,10 @@ export default function Header() {
   }, []);
 
   const navLinks: ({href?: string, label: string, isDropdown?: boolean})[] = [
-    { href: "#hero", label: "ABOUT US" },
-    { href: "#services", label: "SERVICES & PRICING" },
+    { href: "/about", label: "ABOUT US" },
+    { href: "/#services", label: "SERVICES & PRICING" },
     { label: "CLEANING AREA", isDropdown: true },
-    { href: "#contact", label: "CONTACT" },
+    { href: "/#contact", label: "CONTACT" },
   ];
 
   return (
@@ -87,7 +87,7 @@ export default function Header() {
         </nav>
         <div className="hidden md:flex w-1/4 justify-end">
           <Button asChild className="font-semibold">
-            <Link href="#quote">REQUEST A QUOTE</Link>
+            <Link href="/#quote">REQUEST A QUOTE</Link>
           </Button>
         </div>
         <Sheet>
@@ -133,7 +133,7 @@ export default function Header() {
                 )
               })}
                 <Button asChild className="mt-4 font-semibold">
-                    <Link href="#quote">REQUEST A QUOTE <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    <Link href="/#quote">REQUEST A QUOTE <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
             </div>
           </SheetContent>
