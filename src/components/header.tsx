@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Clock, ArrowRight } from "lucide-react";
@@ -10,11 +11,7 @@ import { cn } from "@/lib/utils";
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
         <div className="w-12 h-12 flex items-center justify-center">
-             <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 10 C 20 25, 20 75, 50 90" stroke="hsl(var(--primary))" strokeWidth="6"/>
-                <path d="M50 10 C 80 25, 80 75, 50 90" stroke="hsl(var(--primary))" strokeWidth="6" />
-                <text x="50" y="62" textAnchor="middle" fontSize="28" fontWeight="bold" fill="hsl(var(--primary))">QS</text>
-            </svg>
+             <Image src="/1.png" alt="Quick Step Logo" width={48} height={48} />
         </div>
         <div>
             <span className="text-xl font-bold text-gray-800">Quick Step</span>
