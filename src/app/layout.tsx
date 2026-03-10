@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "N&S Cleaning Service",
   description: "Professional Cleaning For Carpets, Upholstery And Hard Floors.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/1.jpg" }],
 };
 
 export default function RootLayout({
