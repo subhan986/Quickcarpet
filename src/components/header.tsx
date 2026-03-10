@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2" prefetch={false}>
         <div className="w-12 h-12 flex items-center justify-center">
-             <Image src="/1.jpg" alt="Quick Step Logo" width={48} height={48} />
+             <Image src="/g.jpg" alt="Quick Step Logo" width={48} height={48} />
         </div>
         <div>
             <span className="text-xl font-bold text-gray-800">Quick Step</span>
