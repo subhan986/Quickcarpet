@@ -1,11 +1,8 @@
 
 import Image from 'next/image';
-import { BadgeCheck, ShieldCheck, Heart, Users, Star } from 'lucide-react';
+import { BadgeCheck, ShieldCheck, Heart, Star } from 'lucide-react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { team, certifications } from '@/lib/data';
 
 export default function AboutPage() {
   return (
@@ -73,27 +70,6 @@ export default function AboutPage() {
                 <h3 className="mt-4 text-xl font-bold">Satisfaction Guarantee</h3>
                 <p className="mt-2 text-muted-foreground">Your satisfaction is our priority. If you're not happy with our work, we'll make it right. That's our promise.</p>
               </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Certifications */}
-        <section className="w-full">
-          <div className="container px-4 md:px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter">Our Certifications & Accreditations</h2>
-              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">Proof of our commitment to quality and professionalism.</p>
-            </div>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {certifications.map((cert) => (
-                <Card key={cert.name}>
-                  <CardContent className="flex flex-col items-center p-6 text-center">
-                    <Image src={cert.logo} alt={`${cert.name} Logo`} width={120} height={80} className="mb-4 object-contain" data-ai-hint="certification logo" />
-                    <h3 className="text-lg font-bold">{cert.name}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{cert.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
