@@ -13,7 +13,7 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const Logo = () => (
     <Link href="/" className="flex flex-col items-center text-center md:items-start md:text-left" prefetch={false}>
       <div className="w-24 h-24 flex items-center justify-center">
-             <Image src="/LOGO.png" alt="Quick Step Logo" width={104} height={104} />
+             <Image src="/LOGO.png" alt="Quick Step Logo" width={96} height={96} />
       </div>
       <span className="text-xl font-bold text-white">Quick Step</span>
       <p className="text-xs text-gray-400 tracking-widest -mt-1">CARPETS & UPHOLSTERY</p>

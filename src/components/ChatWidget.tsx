@@ -17,7 +17,7 @@ export default function ChatWidget() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, duration: 0.5, type: 'spring', stiffness: 120 }}
         >
-          <a href="#" className="flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg transition-transform hover:scale-105">
+          <a href="https://wa.me/447806997720" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg transition-transform hover:scale-105">
               <WhatsappIcon className="w-6 h-6" />
               <span className="font-semibold hidden md:inline">How can I help you?</span>
           </a>
