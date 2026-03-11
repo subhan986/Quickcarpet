@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Mail, Phone, Clock } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail, Phone, Clock, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { locations } from '@/lib/data';
 import Image from 'next/image';
@@ -58,7 +58,8 @@ export default function Footer() {
             </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
                <li className="flex items-center justify-center md:justify-start gap-2"><Clock size={16} className="text-primary"/> <span>Mon to Sun - 8am to 8pm</span></li>
-               <li className="flex items-center justify-center md:justify-start gap-2"><Phone size={16} className="text-primary"/> <a href="tel:07806997720" className="hover:text-primary">07806 997720</a></li>
+               <li className="flex items-center justify-center md:justify-start gap-2"><Phone size={16} className="text-primary"/> <a href="tel:07806997720" className="hover:text-primary">07806997720</a></li>
+               <li className="flex items-center justify-center md:justify-start gap-2"><MapPin size={16} className="text-primary"/> <span>Suite RA01, 195-197 Wood Street, London</span></li>
             </ul>
           </div>
         </div>
