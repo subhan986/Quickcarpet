@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { locations } from '@/lib/data';
 import { MapPin, Tag, Truck } from 'lucide-react';
 import Image from 'next/image';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export default function CleaningAreaPage() {
   return (
@@ -12,17 +13,17 @@ export default function CleaningAreaPage() {
       <Header />
       <main className="flex-1">
         <section className="w-full bg-secondary py-16 md:py-24">
-          <div className="container px-4 md:px-6 text-center">
+          <ScrollReveal className="container px-4 md:px-6 text-center">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Cleaning Area</h1>
             <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground text-lg md:text-xl">
               We proudly serve a wide range of locations. Find out if we cover your area.
             </p>
-          </div>
+          </ScrollReveal>
         </section>
 
         <section>
             <div className="container grid grid-cols-1 lg:grid-cols-5 gap-12 px-4 md:px-6">
-                <div className="lg:col-span-3">
+                <ScrollReveal className="lg:col-span-3">
                     <Card>
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
@@ -69,9 +70,9 @@ export default function CleaningAreaPage() {
                         </Card>
                     </div>
 
-                </div>
+                </ScrollReveal>
 
-                <div className="lg:col-span-2">
+                <ScrollReveal className="lg:col-span-2" delay={0.2}>
                     <Card>
                         <CardHeader>
                             <CardTitle>Our Coverage Map</CardTitle>
@@ -92,12 +93,14 @@ export default function CleaningAreaPage() {
                             <p className="text-xs text-muted-foreground mt-2">This is a placeholder map. An interactive map of our service area will be available shortly.</p>
                         </CardContent>
                     </Card>
-                </div>
+                </ScrollReveal>
             </div>
         </section>
 
       </main>
-      <Footer />
+      <ScrollReveal>
+        <Footer />
+      </ScrollReveal>
     </div>
   );
 }

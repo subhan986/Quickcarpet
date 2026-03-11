@@ -16,6 +16,10 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import InstantQuoteForm from '@/components/instant-quote-form';
 import { Star, Facebook, Instagram } from 'lucide-react';
+import ScrollReveal from '@/components/animations/ScrollReveal';
+import SocialIcons from '@/components/SocialIcons';
+import ChatWidget from '@/components/ChatWidget';
+
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -48,29 +52,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
 
-        {/* Social Icons */}
-        <div className="fixed top-1/2 -translate-y-1/2 right-0 z-40 hidden md:flex flex-col rounded-l-md overflow-hidden shadow-lg">
-          <a href="#" className="p-3 text-white transition-opacity hover:opacity-90" style={{backgroundColor: '#1877F2'}}>
-            <Facebook size={20} />
-            <span className="sr-only">Facebook</span>
-          </a>
-          <a href="#" className="p-3 text-white transition-opacity hover:opacity-90" style={{backgroundColor: '#000000'}}>
-            <TikTokIcon className="w-5 h-5"/>
-            <span className="sr-only">TikTok</span>
-          </a>
-          <a href="#" className="p-3 text-white transition-opacity hover:opacity-90" style={{background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)'}}>
-            <Instagram size={20} />
-            <span className="sr-only">Instagram</span>
-          </a>
-        </div>
-
-        {/* Chat Widget */}
-          <div className="fixed bottom-5 right-5 z-40">
-          <a href="#" className="flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg transition-transform hover:scale-105">
-              <WhatsappIcon className="w-6 h-6" />
-              <span className="font-semibold hidden md:inline">How can I help you?</span>
-          </a>
-        </div>
+        <SocialIcons />
+        <ChatWidget />
 
         {/* Hero Section */}
         <section id="hero" className="relative w-full overflow-hidden bg-white pt-12 lg:pt-16 pb-0">
@@ -86,7 +69,7 @@ export default function Home() {
             </div>
           <div className="container px-4 md:px-6 h-full">
             <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
-              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
+              <ScrollReveal className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
                 <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-foreground">
                   Professional Cleaning For Carpets, Upholstery And Hard Floors.
                 </h1>
@@ -98,8 +81,8 @@ export default function Home() {
                     <Link href="#quote">GET A FREE QUOTE</Link>
                   </Button>
                 </div>
-              </div>
-              <div className="relative h-[320px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
+              </ScrollReveal>
+              <ScrollReveal delay={0.2} className="relative h-[320px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="relative w-full h-full">
                      <Image
@@ -112,7 +95,7 @@ export default function Home() {
                      />
                    </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -120,7 +103,7 @@ export default function Home() {
         {/* Reviews */}
         <section id="reviews" className="w-full bg-background">
            <div className="container px-4 md:px-6">
-            <div className="text-center space-y-2 mb-12">
+            <ScrollReveal className="text-center space-y-2 mb-12">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">EXCELLENT</h2>
                 <StarRating rating={5} className="justify-center"/>
                 <p className="text-muted-foreground">Based on {reviews.length} reviews</p>
@@ -128,61 +111,65 @@ export default function Home() {
                     <Facebook className="w-5 h-5 text-[#1877F2]" />
                     <span className="font-bold text-lg text-[#1877F2]">facebook</span>
                 </div>
-            </div>
-            <Carousel
-              opts={{ loop: true }}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent>
-                {reviews.map((review, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                        <Card className="h-full">
-                            <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
-                                <div className="flex items-start gap-4">
-                                    <Avatar>
-                                        <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
-                                        <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
-                                    </Avatar>
-                                    <div className="flex-1">
-                                      <div className="flex justify-between items-start">
-                                        <div>
-                                          <p className="font-semibold">{review.author}</p>
-                                          <p className="text-sm text-muted-foreground">{review.time}</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <Carousel
+                opts={{ loop: true }}
+                className="w-full max-w-6xl mx-auto"
+              >
+                <CarouselContent>
+                  {reviews.map((review, index) => (
+                      <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                          <Card className="h-full">
+                              <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
+                                  <div className="flex items-start gap-4">
+                                      <Avatar>
+                                          <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
+                                          <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
+                                      </Avatar>
+                                      <div className="flex-1">
+                                        <div className="flex justify-between items-start">
+                                          <div>
+                                            <p className="font-semibold">{review.author}</p>
+                                            <p className="text-sm text-muted-foreground">{review.time}</p>
+                                          </div>
+                                          <Facebook className="w-5 h-5 text-[#1877F2]" />
                                         </div>
-                                        <Facebook className="w-5 h-5 text-[#1877F2]" />
+                                        <StarRating rating={review.rating} className="mt-2" />
                                       </div>
-                                      <StarRating rating={review.rating} className="mt-2" />
-                                    </div>
-                                </div>
-                                <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
-                                <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
-                            </CardContent>
-                        </Card>
-                    </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -left-4" />
-              <CarouselNext className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -right-4" />
-            </Carousel>
+                                  </div>
+                                  <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
+                                  <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
+                              </CardContent>
+                          </Card>
+                      </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -left-4" />
+                <CarouselNext className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -right-4" />
+              </Carousel>
+            </ScrollReveal>
            </div>
         </section>
         
         {/* Quote Form */}
         <section id="quote" className="w-full bg-secondary text-foreground">
           <div className="container px-4 md:px-6">
-            <div className="text-center space-y-2 mb-12">
+            <ScrollReveal className="text-center space-y-2 mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">GET AN INSTANT QUOTE</h2>
               <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
                 Use our simple tool to get a price estimate for your carpet cleaning needs.
               </p>
-            </div>
-            <div className="max-w-4xl mx-auto">
+            </ScrollReveal>
+            <ScrollReveal delay={0.2} className="max-w-4xl mx-auto">
               <InstantQuoteForm />
-            </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>
-      <Footer />
+      <ScrollReveal>
+        <Footer />
+      </ScrollReveal>
     </div>
   );
 }
@@ -192,4 +179,3 @@ export default function Home() {
     
 
     
-

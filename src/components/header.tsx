@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, ArrowRight } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Logo = () => (
     <Link href="/" className="flex items-center" prefetch={false}>
@@ -36,7 +37,12 @@ export default function Header() {
   ];
 
   return (
-    <header className={cn(`sticky top-0 z-50 w-full bg-secondary transition-shadow border-b-2 border-primary`, isScrolled && 'shadow-md')}>
+    <motion.header 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={cn(`sticky top-0 z-50 w-full bg-secondary transition-shadow border-b-2 border-primary`, isScrolled && 'shadow-md')}
+    >
       <div className="container flex h-14 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
@@ -87,6 +93,6 @@ export default function Header() {
           </SheetContent>
         </Sheet>
       </div>
-    </header>
+    </motion.header>
   );
 }
