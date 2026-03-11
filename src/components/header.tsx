@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const Logo = () => (
     <Link href="/" className="flex items-center" prefetch={false}>
-        <div className="w-24 h-24 flex items-center justify-center">
+        <div className="w-20 h-20 flex items-center justify-center">
              <Image src="/LOGO.png" alt="Quick Step Logo" width={104} height={104} />
         </div>
     </Link>
@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <header className={cn(`sticky top-0 z-50 w-full bg-background transition-shadow`, isScrolled && 'shadow-md')}>
-      <div className="container flex h-24 items-center px-4 md:px-6">
+      <div className="container flex h-20 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
         </div>
