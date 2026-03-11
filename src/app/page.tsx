@@ -78,7 +78,7 @@ export default function Home() {
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
                 </p>
                 <div className="mx-auto lg:mx-0">
-                  <Button asChild size="lg" className="font-bold">
+                  <Button asChild size="lg" className="font-bold border-2 border-primary-foreground/50">
                     <Link href="#quote">GET A FREE QUOTE</Link>
                   </Button>
                 </div>
@@ -231,8 +231,3 @@ export default function Home() {
 }
 
     
-
-    
-
-    
-
