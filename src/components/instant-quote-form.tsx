@@ -20,6 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, WandSparkles } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { cn } from "@/lib/utils";
 
 const InstantQuoteInputSchema = z.object({
   roomSizeSqFt: z.coerce.number().min(50, "Minimum size is 50 sq ft.").max(5000, "Maximum size is 5000 sq ft."),
@@ -68,8 +69,13 @@ export default function InstantQuoteForm() {
   }
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8 items-start">
-      <Card className="w-full bg-card/50">
+    <div
+      className={cn(
+        "items-start gap-8",
+        quote || isSubmitting ? "grid lg:grid-cols-2" : "flex justify-center"
+      )}
+    >
+      <Card className={cn("w-full bg-card/50", !(quote || isSubmitting) && "max-w-2xl")}>
         <CardContent className="p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -201,47 +207,49 @@ export default function InstantQuoteForm() {
         </CardContent>
       </Card>
       
-      <div className="flex items-center justify-center">
-        {isSubmitting && (
-            <Card className="animate-pulse w-full bg-card/50">
-                <CardHeader>
-                    <CardTitle>Generating Your Quote...</CardTitle>
-                    <CardDescription>Our AI is calculating the best price for you.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="h-4 bg-muted rounded w-3/4"></div>
-                    <div className="h-4 bg-muted rounded w-1/2"></div>
-                    <div className="h-4 bg-muted rounded w-2/3"></div>
-                </CardContent>
-            </Card>
-        )}
+      {(quote || isSubmitting) && (
+        <div className="flex items-center justify-center">
+            {isSubmitting && (
+                <Card className="animate-pulse w-full bg-card/50">
+                    <CardHeader>
+                        <CardTitle>Generating Your Quote...</CardTitle>
+                        <CardDescription>Our AI is calculating the best price for you.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="h-4 bg-muted rounded w-3/4"></div>
+                        <div className="h-4 bg-muted rounded w-1/2"></div>
+                        <div className="h-4 bg-muted rounded w-2/3"></div>
+                    </CardContent>
+                </Card>
+            )}
 
-        {quote && (
-            <Card className="animate-in fade-in-50 w-full bg-card/50">
-                <CardHeader>
-                    <CardTitle className="font-headline text-2xl text-primary">Your Estimated Quote</CardTitle>
-                    <CardDescription>Here is the breakdown of your estimated cleaning cost.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="flex justify-between items-center text-3xl font-bold font-headline text-primary">
-                        <span>Total</span>
-                        <span>${quote.estimatedCost.toFixed(2)}</span>
-                    </div>
-                    <Separator />
-                    <div className="space-y-2 text-muted-foreground">
-                        <p className="flex justify-between"><span>Base Cleaning Cost</span> <span>${quote.costBreakdown.baseCleaningCost.toFixed(2)}</span></p>
-                        <p className="flex justify-between"><span>Carpet Type Surcharge</span> <span>${quote.costBreakdown.carpetTypeSurcharge.toFixed(2)}</span></p>
-                        <p className="flex justify-between"><span>Condition Surcharge</span> <span>${quote.costBreakdown.conditionSurcharge.toFixed(2)}</span></p>
-                        <p className="flex justify-between"><span>Pet Stain Treatment</span> <span>${quote.costBreakdown.petStainTreatmentCost.toFixed(2)}</span></p>
-                        <p className="flex justify-between"><span>Odor Removal</span> <span>${quote.costBreakdown.odorRemovalCost.toFixed(2)}</span></p>
-                    </div>
-                </CardContent>
-                <CardFooter>
-                    <p className="text-xs text-muted-foreground">{quote.disclaimer}</p>
-                </CardFooter>
-            </Card>
-        )}
-      </div>
+            {quote && (
+                <Card className="animate-in fade-in-50 w-full bg-card/50">
+                    <CardHeader>
+                        <CardTitle className="font-headline text-2xl text-primary">Your Estimated Quote</CardTitle>
+                        <CardDescription>Here is the breakdown of your estimated cleaning cost.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="flex justify-between items-center text-3xl font-bold font-headline text-primary">
+                            <span>Total</span>
+                            <span>${quote.estimatedCost.toFixed(2)}</span>
+                        </div>
+                        <Separator />
+                        <div className="space-y-2 text-muted-foreground">
+                            <p className="flex justify-between"><span>Base Cleaning Cost</span> <span>${quote.costBreakdown.baseCleaningCost.toFixed(2)}</span></p>
+                            <p className="flex justify-between"><span>Carpet Type Surcharge</span> <span>${quote.costBreakdown.carpetTypeSurcharge.toFixed(2)}</span></p>
+                            <p className="flex justify-between"><span>Condition Surcharge</span> <span>${quote.costBreakdown.conditionSurcharge.toFixed(2)}</span></p>
+                            <p className="flex justify-between"><span>Pet Stain Treatment</span> <span>${quote.costBreakdown.petStainTreatmentCost.toFixed(2)}</span></p>
+                            <p className="flex justify-between"><span>Odor Removal</span> <span>${quote.costBreakdown.odorRemovalCost.toFixed(2)}</span></p>
+                        </div>
+                    </CardContent>
+                    <CardFooter>
+                        <p className="text-xs text-muted-foreground">{quote.disclaimer}</p>
+                    </CardFooter>
+                </Card>
+            )}
+        </div>
+      )}
     </div>
   );
 }
