@@ -49,7 +49,7 @@ export default function Home() {
       <main className="flex-1">
 
         {/* Social Icons */}
-        <div className="fixed top-1/2 -translate-y-1/2 right-0 z-40 flex flex-col rounded-l-md overflow-hidden shadow-lg">
+        <div className="fixed top-1/2 -translate-y-1/2 right-0 z-40 hidden md:flex flex-col rounded-l-md overflow-hidden shadow-lg">
           <a href="#" className="p-3 text-white transition-opacity hover:opacity-90" style={{backgroundColor: '#1877F2'}}>
             <Facebook size={20} />
             <span className="sr-only">Facebook</span>
@@ -68,7 +68,7 @@ export default function Home() {
           <div className="fixed bottom-5 right-5 z-40">
           <a href="#" className="flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg transition-transform hover:scale-105">
               <WhatsappIcon className="w-6 h-6" />
-              <span className="font-semibold hidden sm:inline">How can I help you?</span>
+              <span className="font-semibold hidden md:inline">How can I help you?</span>
           </a>
         </div>
 
@@ -87,10 +87,10 @@ export default function Home() {
           <div className="container px-4 md:px-6 h-full">
             <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
               <div className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
-                <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-foreground">
+                <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-foreground">
                   Professional Cleaning For Carpets, Upholstery And Hard Floors.
                 </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0">
+                <p className="max-w-[600px] text-muted-foreground text-lg md:text-xl mx-auto lg:mx-0">
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
                 </p>
                 <div className="mx-auto lg:mx-0">
@@ -99,7 +99,7 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[280px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
+              <div className="relative h-[320px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="relative w-full h-full">
                      <Image
@@ -192,3 +192,4 @@ export default function Home() {
     
 
     
+

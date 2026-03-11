@@ -16,8 +16,8 @@ export default function ServicesPage() {
       <main className="flex-1">
         <section className="w-full bg-secondary py-16 md:py-24">
           <div className="container px-4 md:px-6 text-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Services & Pricing</h1>
-            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Services & Pricing</h1>
+            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground text-lg md:text-xl">
               Transparent pricing for top-quality cleaning services. No hidden fees.
             </p>
           </div>

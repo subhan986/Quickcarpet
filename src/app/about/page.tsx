@@ -11,8 +11,8 @@ export default function AboutPage() {
       <main className="flex-1">
         <section className="w-full bg-secondary py-16 md:py-24">
           <div className="container px-4 md:px-6 text-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">About Quick Step</h1>
-            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">About Quick Step</h1>
+            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground text-lg md:text-xl">
               Your trusted partner for professional carpet and upholstery cleaning.
             </p>
           </div>
@@ -37,38 +37,6 @@ export default function AboutPage() {
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
                   data-ai-hint="carpet cleaning professional"
                 />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Values */}
-        <section className="w-full bg-secondary">
-          <div className="container px-4 md:px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter">Our Core Values</h2>
-              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">What drives us to deliver the best service possible.</p>
-            </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-              <div className="text-center">
-                <ShieldCheck className="mx-auto h-12 w-12 text-primary" />
-                <h3 className="mt-4 text-xl font-bold">Trust & Reliability</h3>
-                <p className="mt-2 text-muted-foreground">We are committed to being a service you can count on, showing up on time and delivering consistent, high-quality results.</p>
-              </div>
-              <div className="text-center">
-                <Heart className="mx-auto h-12 w-12 text-primary" />
-                <h3 className="mt-4 text-xl font-bold">Eco-Friendly</h3>
-                <p className="mt-2 text-muted-foreground">We use safe, non-toxic, and environmentally friendly cleaning solutions to protect your family, pets, and the planet.</p>
-              </div>
-              <div className="text-center">
-                <Star className="mx-auto h-12 w-12 text-primary" />
-                <h3 className="mt-4 text-xl font-bold">Attention to Detail</h3>
-                <p className="mt-2 text-muted-foreground">From the initial inspection to the final touches, we pride ourselves on our meticulous approach to every job.</p>
-              </div>
-               <div className="text-center">
-                <BadgeCheck className="mx-auto h-12 w-12 text-primary" />
-                <h3 className="mt-4 text-xl font-bold">Satisfaction Guarantee</h3>
-                <p className="mt-2 text-muted-foreground">Your satisfaction is our priority. If you're not happy with our work, we'll make it right. That's our promise.</p>
               </div>
             </div>
           </div>
