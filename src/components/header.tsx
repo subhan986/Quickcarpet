@@ -36,7 +36,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={cn(`sticky top-0 z-50 w-full bg-background transition-shadow`, isScrolled && 'shadow-md')}>
+    <header className={cn(`sticky top-0 z-50 w-full bg-secondary transition-shadow`, isScrolled && 'shadow-md')}>
       <div className="container flex h-16 items-center px-4 md:px-6">
         <div className="md:w-1/4">
           <Logo />
@@ -65,7 +65,7 @@ export default function Header() {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-background text-foreground">
+          <SheetContent side="right" className="bg-secondary text-foreground">
             <div className="py-6">
              <Logo />
             </div>
