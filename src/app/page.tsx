@@ -71,8 +71,8 @@ export default function Home() {
           <div className="container px-4 md:px-6 h-full">
             <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
               <ScrollReveal className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
-                <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-foreground">
-                  Professional Cleaning For Carpets, Upholstery And Hard Floors.
+                <h1 className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground">
+                  Pristine Cleaning for Carpets, Upholstery & Floors.
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground text-lg md:text-xl mx-auto lg:mx-0">
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
