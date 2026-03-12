@@ -66,7 +66,7 @@ export default function Header() {
         </div>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="ml-auto md:hidden">
+            <Button variant="outline" size="icon" className="ml-auto md:hidden" suppressHydrationWarning>
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
