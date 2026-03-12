@@ -88,57 +88,63 @@ export default function Home() {
 
         {/* Services Overview */}
         <section id="services-overview" className="w-full bg-background">
-          <ScrollReveal className="container px-4 md:px-6">
+          <div className="container px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8 space-y-4 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold">Carpet Cleaning</h3>
-                  <p className="text-muted-foreground">Enrich your space with professional carpet care.</p>
-                  <Separator className="bg-primary/50"/>
-                  <ul className="space-y-2 text-muted-foreground flex-grow">
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Stain removal and deep cleaning</span></li>
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Residential and commercial carpet cleaning</span></li>
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Specialized treatments for dirt and tough stains</span></li>
-                  </ul>
-                  <Button asChild className="w-full font-bold mt-4">
-                    <Link href="#quote">ASK FOR QUOTE</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <ScrollReveal>
+                <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300 h-full">
+                  <CardContent className="p-8 space-y-4 flex flex-col h-full">
+                    <h3 className="text-2xl font-bold">Carpet Cleaning</h3>
+                    <p className="text-muted-foreground">Enrich your space with professional carpet care.</p>
+                    <Separator className="bg-primary/50"/>
+                    <ul className="space-y-2 text-muted-foreground flex-grow">
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Stain removal and deep cleaning</span></li>
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Residential and commercial carpet cleaning</span></li>
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Specialized treatments for dirt and tough stains</span></li>
+                    </ul>
+                    <Button asChild className="w-full font-bold mt-4">
+                      <Link href="#quote">ASK FOR QUOTE</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
               
-              <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8 space-y-4 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold">Upholstery Cleaning</h3>
-                  <p className="text-muted-foreground">Support your favorite surfaces with expert care.</p>
-                  <Separator className="bg-primary/50"/>
-                  <ul className="space-y-2 text-muted-foreground flex-grow">
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Comprehensive cleaning for various fabrics</span></li>
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Stain and allergen removal</span></li>
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Speedy drying process with complimentary upholstery dryers</span></li>
-                  </ul>
-                  <Button asChild className="w-full font-bold mt-4">
-                    <Link href="#quote">ASK FOR QUOTE</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <ScrollReveal delay={0.1}>
+                <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300 h-full">
+                  <CardContent className="p-8 space-y-4 flex flex-col h-full">
+                    <h3 className="text-2xl font-bold">Upholstery Cleaning</h3>
+                    <p className="text-muted-foreground">Support your favorite surfaces with expert care.</p>
+                    <Separator className="bg-primary/50"/>
+                    <ul className="space-y-2 text-muted-foreground flex-grow">
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Comprehensive cleaning for various fabrics</span></li>
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Stain and allergen removal</span></li>
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Speedy drying process with complimentary upholstery dryers</span></li>
+                    </ul>
+                    <Button asChild className="w-full font-bold mt-4">
+                      <Link href="#quote">ASK FOR QUOTE</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
 
-              <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8 space-y-4 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold">Hard Floor Cleaning</h3>
-                  <p className="text-muted-foreground">Take your floors to the next level with professional care.</p>
-                  <Separator className="bg-primary/50"/>
-                  <ul className="space-y-2 text-muted-foreground flex-grow">
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Hardwood floor cleaning and restoration</span></li>
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Floor sealing, waxing, and buffing</span></li>
-                    <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Complete maintenance for all hard surfaces</span></li>
-                  </ul>
-                  <Button asChild className="w-full font-bold mt-4">
-                    <Link href="#quote">ASK FOR QUOTE</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <ScrollReveal delay={0.2}>
+                <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300 h-full">
+                  <CardContent className="p-8 space-y-4 flex flex-col h-full">
+                    <h3 className="text-2xl font-bold">Hard Floor Cleaning</h3>
+                    <p className="text-muted-foreground">Take your floors to the next level with professional care.</p>
+                    <Separator className="bg-primary/50"/>
+                    <ul className="space-y-2 text-muted-foreground flex-grow">
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Hardwood floor cleaning and restoration</span></li>
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Floor sealing, waxing, and buffing</span></li>
+                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Complete maintenance for all hard surfaces</span></li>
+                    </ul>
+                    <Button asChild className="w-full font-bold mt-4">
+                      <Link href="#quote">ASK FOR QUOTE</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
+          </div>
         </section>
 
         {/* Quote Form */}
