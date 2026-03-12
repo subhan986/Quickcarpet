@@ -10,7 +10,7 @@
     --card-foreground: 224 71% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
-    --primary: 220 90% 65%;
+    --primary: 220 90% 70%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 20% 94%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 210 20% 85%;
     --input: 210 20% 85%;
-    --ring: 220 90% 65%;
+    --ring: 220 90% 70%;
     --radius: 1rem;
   }
 
@@ -60,4 +60,37 @@
   section {
     @apply w-full py-12 md:py-20 lg:py-24;
   }
+}
+
+@layer utilities {
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animated-gradient-border {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        padding: 2px;
+        display: inline-block;
+        border-radius: 9999px;
+    }
+
+    .animated-gradient-border::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -200%;
+        left: -200%;
+        width: 500%;
+        height: 500%;
+        background: conic-gradient(
+            hsl(var(--primary)),
+            hsl(var(--accent)),
+            hsl(var(--primary))
+        );
+        animation: spin 4s linear infinite;
+    }
 }
