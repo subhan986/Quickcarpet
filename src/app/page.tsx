@@ -93,7 +93,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <ScrollReveal>
-                <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300 h-full hover:scale-105 active:scale-100">
+                <Card className="rounded-2xl border-primary/20 transition-all duration-300 h-full hover:shadow-xl hover:scale-105 hover:-translate-y-2">
                   <CardContent className="p-8 space-y-4 flex flex-col h-full">
                     <h3 className="text-2xl font-bold">Carpet Cleaning</h3>
                     <p className="text-muted-foreground">Enrich your space with professional carpet care.</p>
@@ -111,7 +111,7 @@ export default function Home() {
               </ScrollReveal>
               
               <ScrollReveal delay={0.1}>
-                <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300 h-full hover:scale-105 active:scale-100">
+                <Card className="rounded-2xl border-primary/20 transition-all duration-300 h-full hover:shadow-xl hover:scale-105 hover:-translate-y-2">
                   <CardContent className="p-8 space-y-4 flex flex-col h-full">
                     <h3 className="text-2xl font-bold">Upholstery Cleaning</h3>
                     <p className="text-muted-foreground">Support your favorite surfaces with expert care.</p>
@@ -129,7 +129,7 @@ export default function Home() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="rounded-2xl border-primary/20 hover:shadow-lg transition-shadow duration-300 h-full hover:scale-105 active:scale-100">
+                <Card className="rounded-2xl border-primary/20 transition-all duration-300 h-full hover:shadow-xl hover:scale-105 hover:-translate-y-2">
                   <CardContent className="p-8 space-y-4 flex flex-col h-full">
                     <h3 className="text-2xl font-bold">Hard Floor Cleaning</h3>
                     <p className="text-muted-foreground">Take your floors to the next level with professional care.</p>
