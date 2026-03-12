@@ -7,7 +7,7 @@ import SplashScreen from "@/components/splash-screen";
 export const metadata: Metadata = {
   title: "Quick Step Carpets & Upholstery Dry Cleaning",
   description: "Professional Cleaning For Carpets, Upholstery And Hard Floors.",
-  icons: [{ rel: "icon", url: "/LOGO.png" }],
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
