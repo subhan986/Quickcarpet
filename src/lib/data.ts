@@ -119,6 +119,30 @@ export const reviews = [
     time: '2 years ago',
     avatar: 'https://picsum.photos/seed/avatar-naomi/100/100'
   },
+  {
+    quote: "Fantastic service! My carpets have never looked better. Professional, punctual, and very friendly. Highly recommended.",
+    author: 'David Chen',
+    platform: 'Facebook',
+    rating: 5,
+    time: '8 months ago',
+    avatar: 'https://picsum.photos/seed/avatar-david/100/100'
+  },
+  {
+    quote: "They did an incredible job on our upholstery. The sofa looks brand new. I'm so impressed with the quality of their work.",
+    author: 'Laura Smith',
+    platform: 'Facebook',
+    rating: 5,
+    time: '10 months ago',
+    avatar: 'https://picsum.photos/seed/avatar-laura/100/100'
+  },
+  {
+    quote: "Quick, efficient, and thorough. The team was amazing and got rid of some very tough stains I thought were permanent. Thank you!",
+    author: 'Tom Williams',
+    platform: 'Facebook',
+    rating: 5,
+    time: '11 months ago',
+    avatar: 'https://picsum.photos/seed/avatar-tom/100/100'
+  }
 ];
 
 export const locations = [
