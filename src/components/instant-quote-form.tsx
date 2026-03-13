@@ -21,7 +21,7 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const WhatsappQuoteSchema = z.object({
-  rooms: z.string().min(3, { message: "Please specify which rooms you'd like cleaned." }),
+  rooms: z.string().min(1, { message: "Please specify which rooms you'd like cleaned." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   phone: z.string().min(10, { message: "Please enter a valid phone number." }),
   message: z.string().min(10, { message: "Please add a short message (min. 10 characters)." }).max(500, { message: "Message is too long (max. 500 characters)."}),
