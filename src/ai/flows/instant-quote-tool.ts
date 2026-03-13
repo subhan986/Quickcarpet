@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview An AI agent for generating instant carpet cleaning quotes.
@@ -98,7 +99,7 @@ Has Pet Stains: {{{hasPetStains}}}
 Needs Odor Removal: {{{hasOdorRemoval}}}
 Additional Notes: {{{notes}}}
 
-Provide the estimate strictly in the following JSON format. The disclaimer field should be a clear statement about the estimate being preliminary and subject to on-site inspection.
+Provide the estimate strictly in the following JSON format. The disclaimer field should state: "This is an estimate. Final price is subject to change upon on-site inspection."
 `,
 });
 

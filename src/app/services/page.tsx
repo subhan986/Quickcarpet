@@ -66,7 +66,7 @@ export default function ServicesPage() {
           <div className="container px-4 md:px-6">
             <ScrollReveal className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Our Pricing</h2>
-              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">Find the right plan for your needs. Prices are estimates and may vary based on inspection.</p>
+              <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">The prices shown are estimates. The final cost will be confirmed after an on-site inspection.</p>
             </ScrollReveal>
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
               
