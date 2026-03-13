@@ -174,7 +174,7 @@ export default function InstantQuoteForm() {
                   control={form.control}
                   name="hasPetStains"
                   render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background">
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background transition-all duration-200 hover:shadow-lg hover:scale-[1.01]">
                       <FormControl>
                         <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                       </FormControl>
@@ -191,7 +191,7 @@ export default function InstantQuoteForm() {
                   control={form.control}
                   name="hasOdorRemoval"
                   render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background">
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background transition-all duration-200 hover:shadow-lg hover:scale-[1.01]">
                       <FormControl>
                         <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                       </FormControl>
