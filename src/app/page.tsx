@@ -20,6 +20,7 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 import SocialIcons from '@/components/SocialIcons';
 import ChatWidget from '@/components/ChatWidget';
 import { Separator } from '@/components/ui/separator';
+import TextType from '@/components/TextType';
 
 
 const StarRating = ({ rating, className }: { rating: number, className?: string }) => (
@@ -56,9 +57,22 @@ export default function Home() {
           <div className="container px-4 md:px-6 h-full">
             <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
               <ScrollReveal className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
-                <h1 className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground">
-                  Pristine Cleaning for Carpets, Upholstery & Floors.
-                </h1>
+                <div className="min-h-[7rem]">
+                  <TextType
+                    as="h1"
+                    text={[
+                      "Pristine Cleaning for Carpets.",
+                      "Expert Upholstery Restoration.",
+                      "Sparkling Clean Floors."
+                    ]}
+                    className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground"
+                    typingSpeed={50}
+                    deletingSpeed={25}
+                    pauseDuration={2000}
+                    showCursor
+                    cursorCharacter="_"
+                  />
+                </div>
                 <p className="max-w-[600px] text-muted-foreground text-lg md:text-xl mx-auto lg:mx-0">
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
                 </p>
