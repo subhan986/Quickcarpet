@@ -18,11 +18,13 @@ const Logo = () => (
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-300 border-t border-border/20">
-      <div className="container mx-auto px-4 py-12 md:px-6">
-        <div className="grid gap-8 md:grid-cols-4 text-center md:text-left">
-          <div className="space-y-4 md:col-span-1">
+      <div className="container mx-auto px-4 py-8 md:py-12 md:px-6">
+        <div className="grid grid-cols-2 gap-y-10 gap-x-6 text-center md:grid-cols-4 md:gap-8 md:text-left">
+          
+          <div className="col-span-2 flex flex-col items-center md:col-span-1 md:items-start">
             <Logo />
           </div>
+
           <div className="space-y-4">
              <h4 className="text-lg font-semibold text-primary">About</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -34,13 +36,13 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-primary">Cleaning Area</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {locations.slice(0, 8).map(location => (
+              {locations.slice(0, 5).map(location => (
                 <li key={location}><Link href="/cleaning-area" className="hover:text-primary">{location}</Link></li>
               ))}
                <li><Link href="/cleaning-area" className="hover:text-primary">...and more</Link></li>
             </ul>
           </div>
-          <div className="space-y-4">
+          <div className="col-span-2 space-y-4 md:col-span-1">
             <h4 className="text-lg font-semibold text-primary">Contact Details</h4>
             <div className="flex space-x-2 justify-center md:justify-start">
               <Button variant="ghost" size="icon" asChild>
@@ -51,7 +53,7 @@ export default function Footer() {
                <li className="flex items-center justify-center md:justify-start gap-2"><Clock size={16} className="text-primary"/> <span>Mon to Sun - 8am to 8pm</span></li>
                <li className="flex items-center justify-center md:justify-start gap-2"><Phone size={16} className="text-primary"/> <a href="tel:07806997720" className="hover:text-primary">07806997720</a></li>
                <li className="flex items-center justify-center md:justify-start gap-2"><Mail size={16} className="text-primary"/> <a href="mailto:info@quickstep.com" className="hover:text-primary">info@quickstep.com</a></li>
-               <li className="flex items-center justify-center md:justify-start gap-2"><MapPin size={16} className="text-primary"/> <span>Suite RA01, 195-197 Wood Street, London</span></li>
+               <li className="flex items-center justify-center md:justify-start gap-2"><MapPin size={16} className="text-primary"/> <span>Suite RA01, 195-197 Wood St, London</span></li>
             </ul>
           </div>
         </div>
