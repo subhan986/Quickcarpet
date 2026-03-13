@@ -152,42 +152,21 @@ export default function Home() {
               <ScrollReveal>
                 <Card className="overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="relative">
-                      <Image src="https://picsum.photos/seed/before1/600/400" width={600} height={400} alt="Before cleaning" className="w-full h-auto" data-ai-hint="dirty carpet" />
-                      <div className="absolute top-2 left-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">BEFORE</div>
-                    </div>
-                    <div className="relative">
-                      <Image src="https://picsum.photos/seed/after1/600/400" width={600} height={400} alt="After cleaning" className="w-full h-auto" data-ai-hint="clean carpet" />
-                      <div className="absolute top-2 left-2 bg-primary/80 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">AFTER</div>
-                    </div>
+                    <Image src="/before_after_comparison_2-scaled.jpg" width={600} height={400} alt="Before and after carpet cleaning" className="w-full h-auto" data-ai-hint="carpet cleaning comparison" />
                   </CardContent>
                 </Card>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <Card className="overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="relative">
-                      <Image src="https://picsum.photos/seed/before2/600/400" width={600} height={400} alt="Before cleaning" className="w-full h-auto" data-ai-hint="stained sofa" />
-                      <div className="absolute top-2 left-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">BEFORE</div>
-                    </div>
-                    <div className="relative">
-                      <Image src="https://picsum.photos/seed/after2/600/400" width={600} height={400} alt="After cleaning" className="w-full h-auto" data-ai-hint="clean sofa" />
-                      <div className="absolute top-2 left-2 bg-primary/80 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">AFTER</div>
-                    </div>
+                    <Image src="/before_after_comparison_9-scaled.jpg" width={600} height={400} alt="Before and after upholstery cleaning" className="w-full h-auto" data-ai-hint="sofa cleaning comparison" />
                   </CardContent>
                 </Card>
               </ScrollReveal>
               <ScrollReveal delay={0.4}>
                 <Card className="overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="relative">
-                      <Image src="https://picsum.photos/seed/before3/600/400" width={600} height={400} alt="Before cleaning" className="w-full h-auto" data-ai-hint="dirty rug" />
-                      <div className="absolute top-2 left-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">BEFORE</div>
-                    </div>
-                    <div className="relative">
-                      <Image src="https://picsum.photos/seed/after3/600/400" width={600} height={400} alt="After cleaning" className="w-full h-auto" data-ai-hint="clean rug" />
-                      <div className="absolute top-2 left-2 bg-primary/80 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">AFTER</div>
-                    </div>
+                   <Image src="/before_after_comparison_12-scaled.jpg" width={600} height={400} alt="Before and after rug cleaning" className="w-full h-auto" data-ai-hint="rug cleaning comparison" />
                   </CardContent>
                 </Card>
               </ScrollReveal>
