@@ -69,7 +69,7 @@ export default function Home() {
                     className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground"
                     typingSpeed={25}
                     loop={false}
-                    showCursor
+                    showCursor={true}
                     cursorCharacter="_"
                   />
                 </div>
@@ -139,8 +139,64 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Before & After Section */}
+        <section id="before-after" className="w-full bg-secondary">
+          <div className="container px-4 md:px-6">
+            <ScrollReveal className="text-center space-y-3 mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">See the Transformation</h2>
+              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-lg">
+                Our cleaning process delivers stunning results. Check out these before and after shots.
+              </p>
+            </ScrollReveal>
+            <div className="grid md:grid-cols-3 gap-8">
+              <ScrollReveal>
+                <Card className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <Image src="https://picsum.photos/seed/before1/600/400" width={600} height={400} alt="Before cleaning" className="w-full h-auto" data-ai-hint="dirty carpet" />
+                      <div className="absolute top-2 left-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">BEFORE</div>
+                    </div>
+                    <div className="relative">
+                      <Image src="https://picsum.photos/seed/after1/600/400" width={600} height={400} alt="After cleaning" className="w-full h-auto" data-ai-hint="clean carpet" />
+                      <div className="absolute top-2 left-2 bg-primary/80 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">AFTER</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <Card className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <Image src="https://picsum.photos/seed/before2/600/400" width={600} height={400} alt="Before cleaning" className="w-full h-auto" data-ai-hint="stained sofa" />
+                      <div className="absolute top-2 left-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">BEFORE</div>
+                    </div>
+                    <div className="relative">
+                      <Image src="https://picsum.photos/seed/after2/600/400" width={600} height={400} alt="After cleaning" className="w-full h-auto" data-ai-hint="clean sofa" />
+                      <div className="absolute top-2 left-2 bg-primary/80 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">AFTER</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+              <ScrollReveal delay={0.4}>
+                <Card className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <Image src="https://picsum.photos/seed/before3/600/400" width={600} height={400} alt="Before cleaning" className="w-full h-auto" data-ai-hint="dirty rug" />
+                      <div className="absolute top-2 left-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">BEFORE</div>
+                    </div>
+                    <div className="relative">
+                      <Image src="https://picsum.photos/seed/after3/600/400" width={600} height={400} alt="After cleaning" className="w-full h-auto" data-ai-hint="clean rug" />
+                      <div className="absolute top-2 left-2 bg-primary/80 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider">AFTER</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* Reviews */}
-        <section id="reviews" className="w-full bg-secondary">
+        <section id="reviews" className="w-full bg-background">
            <div className="container px-4 md:px-6">
             <ScrollReveal className="text-center space-y-2 mb-12">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">EXCELLENT</h2>
@@ -161,7 +217,7 @@ export default function Home() {
               >
                 <CarouselContent>
                   {reviews.map((review, index) => (
-                      <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/4">
+                      <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/4">
                           <div className="p-1 h-full">
                               <Card className="h-full">
                                   <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
