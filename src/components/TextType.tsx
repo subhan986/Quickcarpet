@@ -30,6 +30,7 @@ const TextType = ({
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
+  const [isFinished, setIsFinished] = useState(false);
   const cursorRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -66,19 +67,23 @@ const TextType = ({
 
   useEffect(() => {
     if (showCursor && cursorRef.current) {
-      gsap.set(cursorRef.current, { opacity: 1 });
-      gsap.to(cursorRef.current, {
-        opacity: 0,
-        duration: cursorBlinkDuration,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power2.inOut'
-      });
+      if (isFinished) {
+        gsap.killTweensOf(cursorRef.current);
+      } else {
+        gsap.set(cursorRef.current, { opacity: 1 });
+        gsap.to(cursorRef.current, {
+          opacity: 0,
+          duration: cursorBlinkDuration,
+          repeat: -1,
+          yoyo: true,
+          ease: 'power2.inOut'
+        });
+      }
     }
-  }, [showCursor, cursorBlinkDuration]);
+  }, [showCursor, cursorBlinkDuration, isFinished]);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || isFinished) return;
 
     let timeout: any;
     const currentText = textArray[currentTextIndex];
@@ -90,6 +95,7 @@ const TextType = ({
         if (displayedText === '') {
           setIsDeleting(false);
           if (currentTextIndex === textArray.length - 1 && !loop) {
+            setIsFinished(true);
             return;
           }
 
@@ -114,8 +120,14 @@ const TextType = ({
             },
             variableSpeed ? getRandomSpeed() : typingSpeed
           );
-        } else if (textArray.length > 1) {
-          if (!loop && currentTextIndex === textArray.length - 1) return;
+        } else { // Typing of one sentence is complete
+          if (onSentenceComplete) {
+            onSentenceComplete(textArray[currentTextIndex], currentTextIndex);
+          }
+          if (!loop && currentTextIndex === textArray.length - 1) {
+            setIsFinished(true); // End of all sentences, no loop
+            return;
+          }
           timeout = setTimeout(() => {
             setIsDeleting(true);
           }, pauseDuration);
@@ -145,7 +157,8 @@ const TextType = ({
     isVisible,
     reverseMode,
     variableSpeed,
-    onSentenceComplete
+    onSentenceComplete,
+    isFinished
   ]);
 
   const shouldHideCursor =
@@ -161,7 +174,7 @@ const TextType = ({
     <span className="text-type__content" style={{ color: getCurrentTextColor() || 'inherit' }}>
       {displayedText}
     </span>,
-    showCursor && (
+    showCursor && !isFinished && (
       <span
         ref={cursorRef}
         className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
