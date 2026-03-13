@@ -14,6 +14,7 @@ import SocialIcons from '@/components/SocialIcons';
 import ChatWidget from '@/components/ChatWidget';
 import { Separator } from '@/components/ui/separator';
 import TextType from '@/components/TextType';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 
 const StarRating = ({ rating, className }: { rating: number, className?: string }) => (
@@ -179,32 +180,46 @@ export default function Home() {
                 </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                {reviews.map((review, index) => (
-                    <Card key={index} className="h-full">
-                        <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
-                            <div className="flex items-start gap-4">
-                                <Avatar>
-                                    <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
-                                    <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
-                                </Avatar>
-                                <div className="flex-1">
-                                  <div className="flex justify-between items-start">
-                                    <div>
-                                      <p className="font-semibold">{review.author}</p>
-                                      <p className="text-sm text-muted-foreground">{review.time}</p>
-                                    </div>
-                                    <Facebook className="w-5 h-5 text-[#1877F2]" />
-                                  </div>
-                                  <StarRating rating={review.rating} className="mt-2" />
-                                </div>
-                            </div>
-                            <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
-                            <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
-                        </CardContent>
-                    </Card>
-                ))}
-              </div>
+              <Carousel 
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-6xl mx-auto"
+              >
+                <CarouselContent>
+                  {reviews.map((review, index) => (
+                      <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/4">
+                          <div className="p-1 h-full">
+                              <Card className="h-full">
+                                  <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
+                                      <div className="flex items-start gap-4">
+                                          <Avatar>
+                                              <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
+                                              <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
+                                          </Avatar>
+                                          <div className="flex-1">
+                                            <div className="flex justify-between items-start">
+                                              <div>
+                                                <p className="font-semibold">{review.author}</p>
+                                                <p className="text-sm text-muted-foreground">{review.time}</p>
+                                              </div>
+                                              <Facebook className="w-5 h-5 text-[#1877F2]" />
+                                            </div>
+                                            <StarRating rating={review.rating} className="mt-2" />
+                                          </div>
+                                      </div>
+                                      <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
+                                      <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
+                                  </CardContent>
+                              </Card>
+                          </div>
+                      </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden sm:flex" />
+                <CarouselNext className="hidden sm:flex" />
+              </Carousel>
             </ScrollReveal>
            </div>
         </section>
@@ -216,7 +231,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
