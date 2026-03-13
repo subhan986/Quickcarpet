@@ -1,9 +1,11 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import {
   generateInstantQuote,
@@ -68,6 +70,11 @@ export default function InstantQuoteForm() {
     }
   }
 
+  const fieldVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <div
       className={cn(
@@ -79,7 +86,13 @@ export default function InstantQuoteForm() {
         <CardContent className="p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <motion.div 
+                className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+                variants={fieldVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 <FormField
                   control={form.control}
                   name="roomSizeSqFt"
@@ -117,33 +130,46 @@ export default function InstantQuoteForm() {
                     </FormItem>
                   )}
                 />
-              </div>
+              </motion.div>
 
-               <FormField
-                control={form.control}
-                name="carpetCondition"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Carpet Condition</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger className="bg-background">
-                          <SelectValue placeholder="Select condition" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="lightlySoiled">Lightly Soiled</SelectItem>
-                        <SelectItem value="moderatelySoiled">Moderately Soiled</SelectItem>
-                        <SelectItem value="heavilySoiled">Heavily Soiled</SelectItem>
-                        <SelectItem value="heavilyStained">Heavily Stained</SelectItem>
-                      </SelectContent>
-                    </Select>
+              <motion.div
+                variants={fieldVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <FormField
+                  control={form.control}
+                  name="carpetCondition"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Carpet Condition</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="bg-background">
+                            <SelectValue placeholder="Select condition" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="lightlySoiled">Lightly Soiled</SelectItem>
+                          <SelectItem value="moderatelySoiled">Moderately Soiled</SelectItem>
+                          <SelectItem value="heavilySoiled">Heavily Soiled</SelectItem>
+                          <SelectItem value="heavilyStained">Heavily Stained</SelectItem>
+                        </SelectContent>
+                      </Select>
                      <FormMessage />
                   </FormItem>
                 )}
               />
+              </motion.div>
 
-              <div className="space-y-4">
+              <motion.div 
+                className="space-y-4"
+                variants={fieldVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                  <FormField
                   control={form.control}
                   name="hasPetStains"
@@ -178,8 +204,14 @@ export default function InstantQuoteForm() {
                     </FormItem>
                   )}
                 />
-              </div>
+              </motion.div>
 
+              <motion.div
+                variants={fieldVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
               <FormField
                 control={form.control}
                 name="notes"
@@ -193,7 +225,14 @@ export default function InstantQuoteForm() {
                   </FormItem>
                 )}
               />
+              </motion.div>
 
+              <motion.div
+                variants={fieldVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
               <Button type="submit" className="w-full font-semibold" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -202,6 +241,7 @@ export default function InstantQuoteForm() {
                 )}
                 Generate Quote
               </Button>
+              </motion.div>
             </form>
           </Form>
         </CardContent>
