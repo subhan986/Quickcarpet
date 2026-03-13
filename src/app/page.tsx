@@ -62,7 +62,7 @@ export default function Home() {
                     as="h1"
                     text="Pristine Cleaning for Carpets, Upholstery & Floors."
                     className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground"
-                    typingSpeed={50}
+                    typingSpeed={25}
                     loop={false}
                     showCursor
                     cursorCharacter="_"
