@@ -56,7 +56,7 @@ export default function Home() {
             </div>
           <div className="container px-4 md:px-6 h-full">
             <div className="grid lg:grid-cols-2 lg:gap-12 items-end h-full">
-              <ScrollReveal className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
+              <ScrollReveal x={-100} className="flex flex-col justify-center space-y-6 text-center lg:text-left z-10 lg:self-center">
                 <div className="min-h-[7rem]">
                   <TextType
                     as="h1"
@@ -79,7 +79,7 @@ export default function Home() {
                   </div>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={0.2} className="relative h-[320px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
+              <ScrollReveal x={100} delay={0.2} className="relative h-[320px] sm:h-[380px] lg:h-[520px] w-full mt-8 lg:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="relative w-full h-full">
                      <Image

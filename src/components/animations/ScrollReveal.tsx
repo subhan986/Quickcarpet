@@ -9,6 +9,7 @@ interface ScrollRevealProps {
   delay?: number;
   duration?: number;
   y?: number;
+  x?: number;
 }
 
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
@@ -16,7 +17,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   className,
   delay = 0,
   duration = 0.5,
-  y = 50,
+  y,
+  x,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -29,8 +31,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   }, [isInView, mainControls]);
 
   const variants: Variants = {
-    hidden: { opacity: 0, y },
-    visible: { opacity: 1, y: 0 },
+    hidden: { 
+      opacity: 0, 
+      y: y ?? (x ? 0 : 50),
+      x: x ?? 0
+    },
+    visible: { opacity: 1, y: 0, x: 0 },
   };
 
   return (
