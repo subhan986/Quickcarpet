@@ -6,7 +6,7 @@ import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "600"],
   variable: "--font-heading",
 });
 
@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Quick Step Carpets & Upholstery Dry Cleaning",
   description: "Professional Cleaning For Carpets, Upholstery And Hard Floors.",
 };
