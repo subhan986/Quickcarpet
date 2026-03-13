@@ -29,7 +29,7 @@ export default function AboutPage() {
                   We understand the importance of keeping your carpets, upholstery, and hard floors looking and feeling their best. This is why we offer a variety of services to meet your needs. Whether you’re in need of a deep clean, stain removal, or regular maintenance, we’ve got you covered with our local carpet cleaning expertise. Our services include Carpet cleaning, Upholstery cleaning, Hard floor cleaning, Professional cleaning, Stain removal, Deep cleaning, Carpet maintenance, Floor restoration, and Carpet sanitizing.
                 </p>
                 <p className="text-muted-foreground text-lg">
-                  Our local company has been serving the Banbury community for many years. We’ve built a reputation for providing high-quality, reliable service. We use the latest techniques and equipment. Consequently, your carpets, upholstery, and hard floors are left looking and feeling fresh, clean, and revitalized. Consider us for your local needs.
+                  Our local company, based at Suite RA01, 195-197 Wood Street, London, has been serving the community for many years. We’ve built a reputation for providing high-quality, reliable service. We use the latest techniques and equipment. Consequently, your carpets, upholstery, and hard floors are left looking and feeling fresh, clean, and revitalized. Consider us for your local needs.
                 </p>
               </ScrollReveal>
               <ScrollReveal className="relative" delay={0.2}>
