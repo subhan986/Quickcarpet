@@ -62,7 +62,7 @@ export default function Home() {
                     cursorCharacter="_"
                   />
                 </div>
-                <p className="max-w-[600px] text-muted-foreground text-lg md:text-xl mx-auto lg:mx-0">
+                <p className="max-w-[600px] text-foreground text-lg md:text-xl mx-auto lg:mx-0">
                   Local Experts in Deep Cleaning, Stain Removal and Restoration.
                 </p>
                 <div className="mx-auto lg:mx-0">
