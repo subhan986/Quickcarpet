@@ -54,7 +54,7 @@ export default function Home() {
                 <div className="min-h-[7rem]">
                   <TextType
                     as="h1"
-                    text="Pristine Cleaning for Carpets, Upholstery & Floors."
+                    text="Professional Cleaning for Carpets, Upholstery & Floors."
                     className="text-3xl font-bold tracking-tight sm:text-5xl text-foreground"
                     typingSpeed={25}
                     loop={false}
