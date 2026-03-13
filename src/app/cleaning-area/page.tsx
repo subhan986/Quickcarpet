@@ -78,14 +78,17 @@ export default function CleaningAreaPage() {
                             <CardTitle>Our Coverage Map</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-                                <Image 
-                                    src="https://picsum.photos/seed/map-placeholder/600/600" 
-                                    alt="A static map showing the general service area."
-                                    fill
-                                    className="object-cover"
-                                    data-ai-hint="map UK"
-                                />
+                            <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                                <iframe
+                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317715.7119263354!2d-0.3514683424687556!3d51.50933232824653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1717171717171!5m2!1sen!2sus"
+                                  width="100%"
+                                  height="100%"
+                                  style={{ border: 0 }}
+                                  allowFullScreen={true}
+                                  loading="lazy"
+                                  referrerPolicy="no-referrer-when-downgrade"
+                                  className="absolute inset-0"
+                                ></iframe>
                             </div>
                             <p className="text-xs text-muted-foreground mt-2">Our service area covers a wide range of locations across London and surrounding areas.</p>
                         </CardContent>
