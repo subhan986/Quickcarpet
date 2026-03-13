@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import SplashScreen from "@/components/splash-screen";
 
 export const metadata: Metadata = {
   title: "Quick Step Carpets & Upholstery Dry Cleaning",
@@ -24,7 +23,6 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased"
         )}
       >
-        <SplashScreen />
         {children}
         <Toaster />
       </body>
