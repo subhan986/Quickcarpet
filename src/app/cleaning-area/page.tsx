@@ -81,16 +81,13 @@ export default function CleaningAreaPage() {
                             <div className="relative aspect-square w-full overflow-hidden rounded-lg">
                                 <Image 
                                     src="https://picsum.photos/seed/map-placeholder/600/600" 
-                                    alt="Map of service area"
-                                    layout="fill"
-                                    objectFit="cover"
+                                    alt="A static map showing the general service area."
+                                    fill
+                                    className="object-cover"
                                     data-ai-hint="map UK"
                                 />
-                                <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-                                    <p className="text-white bg-black/50 p-4 rounded-md font-semibold">Visual Map Coming Soon</p>
-                                </div>
                             </div>
-                            <p className="text-xs text-muted-foreground mt-2">This is a placeholder map. An interactive map of our service area will be available shortly.</p>
+                            <p className="text-xs text-muted-foreground mt-2">Our service area covers a wide range of locations across London and surrounding areas.</p>
                         </CardContent>
                     </Card>
                 </ScrollReveal>
