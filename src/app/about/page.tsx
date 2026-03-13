@@ -26,7 +26,10 @@ export default function AboutPage() {
               <ScrollReveal className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
                 <p className="text-muted-foreground text-lg">
-                  Founded over a decade ago, Quick Step was born from a passion for bringing new life to homes and businesses through pristine cleaning. We started as a small local service and have since grown into a trusted name in the industry, known for our reliability and exceptional results. Our mission is to provide a healthier, cleaner environment for our clients through professional and eco-friendly cleaning services.
+                  We understand the importance of keeping your carpets, upholstery, and hard floors looking and feeling their best. This is why we offer a variety of services to meet your needs. Whether you’re in need of a deep clean, stain removal, or regular maintenance, we’ve got you covered with our local carpet cleaning expertise. Our services include Carpet cleaning, Upholstery cleaning, Hard floor cleaning, Professional cleaning, Stain removal, Deep cleaning, Carpet maintenance, Floor restoration, and Carpet sanitizing.
+                </p>
+                <p className="text-muted-foreground text-lg">
+                  Our local company has been serving the Banbury community for many years. We’ve built a reputation for providing high-quality, reliable service. We use the latest techniques and equipment. Consequently, your carpets, upholstery, and hard floors are left looking and feeling fresh, clean, and revitalized. Consider us for your local needs.
                 </p>
               </ScrollReveal>
               <ScrollReveal className="relative" delay={0.2}>
