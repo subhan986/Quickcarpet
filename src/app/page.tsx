@@ -156,12 +156,12 @@ export default function Home() {
         <section id="quote" className="w-full bg-background text-foreground">
           <div className="container px-4 md:px-6">
             <ScrollReveal className="text-center space-y-2 mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">GET AN INSTANT QUOTE</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Request A Free Quote</h2>
               <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
-                Use our simple tool to get a price estimate for your carpet cleaning needs.
+                Fill out the form below. We'll send your message directly to our team via WhatsApp.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={0.2} className="max-w-4xl mx-auto">
+            <ScrollReveal delay={0.2} className="flex justify-center">
               <InstantQuoteForm />
             </ScrollReveal>
           </div>

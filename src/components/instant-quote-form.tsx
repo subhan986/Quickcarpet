@@ -7,67 +7,67 @@ import { z } from "zod";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import {
-  generateInstantQuote,
-  type InstantQuoteInput,
-  type InstantQuoteOutput,
-} from "@/ai/flows/instant-quote-tool";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Card, CardContent } from "@/components/ui/card";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, WandSparkles } from "lucide-react";
-import { Separator } from "./ui/separator";
-import { cn } from "@/lib/utils";
 
-const InstantQuoteInputSchema = z.object({
-  roomSizeSqFt: z.coerce.number().min(50, "Minimum size is 50 sq ft.").max(5000, "Maximum size is 5000 sq ft."),
-  carpetType: z.enum(['synthetic', 'wool', 'blended', 'shag', 'berber'], { required_error: "Please select a carpet type." }),
-  carpetCondition: z.enum(['lightlySoiled', 'moderatelySoiled', 'heavilySoiled', 'heavilyStained'], { required_error: "Please select the carpet condition." }),
-  hasPetStains: z.boolean().default(false),
-  hasOdorRemoval: z.boolean().default(false),
-  notes: z.string().optional(),
+const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.32 4.95L2 22l5.25-1.38c1.41.81 3.02 1.24 4.7 1.24h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM16.9 14.8c-.22-.11-.76-.38-.88-.42-.12-.04-.21-.06-.3.11-.1.17-.33.42-.41.51-.08.09-.16.1-.3.04-.14-.06-.59-.22-1.13-.69s-.9-1.03-1.02-1.21c-.12-.17-.01-.26.09-.36.09-.09.2-.24.3-.36.1-.12.13-.21.2-.36s.01-.27-.04-.37c-.05-.1-.3-.71-.41-.97-.11-.26-.22-.22-.3-.22h-.28c-.1 0-.24.03-.36.17-.12.14-.47.46-.47.92s.48 1.07.55 1.15c.07.08.95 1.45 2.3 2.02.32.13.57.21.77.27.35.1.65.09.89-.06.27-.15.76-.31.87-.61s.11-.56.08-.61c-.03-.06-.11-.1-.22-.16z"/>
+    </svg>
+);
+
+const WhatsappQuoteSchema = z.object({
+  rooms: z.string().min(3, { message: "Please specify which rooms you'd like cleaned." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
+  message: z.string().min(10, { message: "Please add a short message (min. 10 characters)." }).max(500, { message: "Message is too long (max. 500 characters)."}),
 });
 
-export default function InstantQuoteForm() {
+type WhatsappQuoteInput = z.infer<typeof WhatsappQuoteSchema>;
+
+export default function WhatsappQuoteForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [quote, setQuote] = useState<InstantQuoteOutput | null>(null);
 
-  const form = useForm<InstantQuoteInput>({
-    resolver: zodResolver(InstantQuoteInputSchema),
+  const form = useForm<WhatsappQuoteInput>({
+    resolver: zodResolver(WhatsappQuoteSchema),
     defaultValues: {
-      roomSizeSqFt: 150,
-      hasPetStains: false,
-      hasOdorRemoval: false,
-      notes: "",
+      rooms: "",
+      email: "",
+      phone: "",
+      message: "",
     },
   });
 
-  async function onSubmit(data: InstantQuoteInput) {
+  function onSubmit(data: WhatsappQuoteInput) {
     setIsSubmitting(true);
-    setQuote(null);
-    try {
-      const result = await generateInstantQuote(data);
-      if(result) {
-        setQuote(result);
-      } else {
-        throw new Error("AI did not return a quote.");
-      }
-    } catch (error) {
-      console.error(error);
-      toast({
-        variant: "destructive",
-        title: "Quote Generation Failed",
-        description: "We couldn't generate a quote at this time. Please try again later.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    
+    const formattedMessage = `
+*New Quote Request*
+
+*Rooms:* ${data.rooms}
+*Email:* ${data.email}
+*Phone:* ${data.phone}
+
+*Message:*
+${data.message}
+    `.trim();
+
+    const whatsappUrl = `https://wa.me/447806997720?text=${encodeURIComponent(formattedMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
+
+    toast({
+        title: "Redirecting to WhatsApp",
+        description: "Your message has been prepared. Please send it in WhatsApp.",
+    });
+
+    form.reset();
+    setIsSubmitting(false);
   }
 
   const fieldVariants = {
@@ -76,220 +76,101 @@ export default function InstantQuoteForm() {
   };
 
   return (
-    <div
-      className={cn(
-        "items-start gap-8",
-        quote || isSubmitting ? "grid lg:grid-cols-2" : "flex justify-center"
-      )}
-    >
-      <Card className={cn("w-full bg-card/50", !(quote || isSubmitting) && "max-w-2xl")}>
-        <CardContent className="p-6">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <motion.div 
-                className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-                variants={fieldVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <FormField
-                  control={form.control}
-                  name="roomSizeSqFt"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Room Size (sq ft)</FormLabel>
-                      <FormControl>
-                        <Input type="number" placeholder="e.g., 150" {...field} className="bg-background"/>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                 <FormField
-                  control={form.control}
-                  name="carpetType"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Carpet Type</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-background">
-                            <SelectValue placeholder="Select a type" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="synthetic">Synthetic</SelectItem>
-                          <SelectItem value="wool">Wool</SelectItem>
-                          <SelectItem value="blended">Blended</SelectItem>
-                          <SelectItem value="shag">Shag</SelectItem>
-                          <SelectItem value="berber">Berber</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </motion.div>
-
-              <motion.div
-                variants={fieldVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <FormField
-                  control={form.control}
-                  name="carpetCondition"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Carpet Condition</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-background">
-                            <SelectValue placeholder="Select condition" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="lightlySoiled">Lightly Soiled</SelectItem>
-                          <SelectItem value="moderatelySoiled">Moderately Soiled</SelectItem>
-                          <SelectItem value="heavilySoiled">Heavily Soiled</SelectItem>
-                          <SelectItem value="heavilyStained">Heavily Stained</SelectItem>
-                        </SelectContent>
-                      </Select>
-                     <FormMessage />
-                  </FormItem>
-                )}
-              />
-              </motion.div>
-
-              <motion.div 
-                className="space-y-4"
-                variants={fieldVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                 <FormField
-                  control={form.control}
-                  name="hasPetStains"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background transition-all duration-200 hover:shadow-lg hover:scale-[1.01]">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Pet Stain Treatment</FormLabel>
-                        <FormDescription>
-                          Add specialized treatment for pet stains.
-                        </FormDescription>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="hasOdorRemoval"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-background transition-all duration-200 hover:shadow-lg hover:scale-[1.01]">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Odor Removal</FormLabel>
-                        <FormDescription>
-                          Add our deep odor removal service.
-                        </FormDescription>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-              </motion.div>
-
-              <motion.div
-                variants={fieldVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
+    <Card className="w-full max-w-2xl bg-card/50">
+      <CardContent className="p-6">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <motion.div
+              variants={fieldVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <FormField
                 control={form.control}
-                name="notes"
+                name="rooms"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Additional Notes (Optional)</FormLabel>
+                    <FormLabel>Rooms to Clean</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Any specific areas of concern?" {...field} className="bg-background" />
+                      <Input placeholder="e.g., Living Room, 2 Bedrooms" {...field} className="bg-background"/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              </motion.div>
+            </motion.div>
 
-              <motion.div
-                variants={fieldVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-              <Button type="submit" className="w-full font-semibold" disabled={isSubmitting}>
-                {isSubmitting ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                ) : (
-                  <WandSparkles className="mr-2 h-4 w-4" />
+            <motion.div
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+              variants={fieldVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="your@email.com" {...field} className="bg-background"/>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
                 )}
-                Generate Quote
-              </Button>
-              </motion.div>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
-      
-      {(quote || isSubmitting) && (
-        <div className="flex items-center justify-center">
-            {isSubmitting && (
-                <Card className="animate-pulse w-full bg-card/50">
-                    <CardHeader>
-                        <CardTitle>Generating Your Quote...</CardTitle>
-                        <CardDescription>Our AI is calculating the best price for you.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div className="h-4 bg-muted rounded w-3/4"></div>
-                        <div className="h-4 bg-muted rounded w-1/2"></div>
-                        <div className="h-4 bg-muted rounded w-2/3"></div>
-                    </CardContent>
-                </Card>
-            )}
+              />
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input type="tel" placeholder="Your contact number" {...field} className="bg-background"/>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </motion.div>
 
-            {quote && (
-                <Card className="animate-in fade-in-50 w-full bg-card/50">
-                    <CardHeader>
-                        <CardTitle className="font-headline text-2xl text-primary">Your Estimated Quote</CardTitle>
-                        <CardDescription>Here is the breakdown of your estimated cleaning cost.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div className="flex justify-between items-center text-3xl font-bold font-headline text-primary">
-                            <span>Total</span>
-                            <span>${quote.estimatedCost.toFixed(2)}</span>
-                        </div>
-                        <Separator />
-                        <div className="space-y-2 text-muted-foreground">
-                            <p className="flex justify-between"><span>Base Cleaning Cost</span> <span>${quote.costBreakdown.baseCleaningCost.toFixed(2)}</span></p>
-                            <p className="flex justify-between"><span>Carpet Type Surcharge</span> <span>${quote.costBreakdown.carpetTypeSurcharge.toFixed(2)}</span></p>
-                            <p className="flex justify-between"><span>Condition Surcharge</span> <span>${quote.costBreakdown.conditionSurcharge.toFixed(2)}</span></p>
-                            <p className="flex justify-between"><span>Pet Stain Treatment</span> <span>${quote.costBreakdown.petStainTreatmentCost.toFixed(2)}</span></p>
-                            <p className="flex justify-between"><span>Odor Removal</span> <span>${quote.costBreakdown.odorRemovalCost.toFixed(2)}</span></p>
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <p className="text-xs text-muted-foreground">{quote.disclaimer}</p>
-                    </CardFooter>
-                </Card>
-            )}
-        </div>
-      )}
-    </div>
+            <motion.div
+              variants={fieldVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Tell us about what you need cleaned, any specific stains, etc." {...field} className="bg-background" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </motion.div>
+
+            <motion.div
+              variants={fieldVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Button type="submit" className="w-full font-semibold" disabled={isSubmitting}>
+                <WhatsappIcon className="mr-2 h-5 w-5" />
+                Send Request via WhatsApp
+              </Button>
+            </motion.div>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
   );
 }
