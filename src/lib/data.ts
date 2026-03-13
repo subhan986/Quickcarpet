@@ -80,7 +80,23 @@ export const certifications = [
 
 export const reviews = [
   {
-    quote: '...day... Carpets look brand new! at a transformation. n only say, absolutely fantastic...',
+    quote: 'We had our sofa and futon cleaned, and they look great! Super service, quick, thorough, and friendly. Recommended!',
+    author: 'Katy Soar',
+    platform: 'Facebook',
+    rating: 5,
+    time: '1 year ago',
+    avatar: 'https://picsum.photos/seed/avatar-katy/100/100'
+  },
+  {
+    quote: 'Just had carpets clean. Wow they look like new again. Really easy to book and very quick to reply. Professional friendly service. Thank you for a great job.',
+    author: 'Sebrina O\'Rourke',
+    platform: 'Facebook',
+    rating: 5,
+    time: '1 year ago',
+    avatar: 'https://picsum.photos/seed/avatar-sebrina/100/100'
+  },
+  {
+    quote: 'Norbert visited my house yesterday....Carpets look brand new! What a transformation. Can only say, absolutely fantastic...',
     author: 'Julie Linnane',
     platform: 'Facebook',
     rating: 5,
@@ -88,7 +104,7 @@ export const reviews = [
     avatar: 'https://picsum.photos/seed/avatar-julie/100/100'
   },
   {
-    quote: 'Just had my carpets cleaned and they look amazing! All stains gone and looking fluffy and new again. An excellent, friendly and fast service fro...',
+    quote: 'Just had my carpets cleaned and they look amazing! All stains gone and looking fluffy and new again. An excellent, friendly and fast service from N&S will definitely be...',
     author: 'Michelle Booth',
     platform: 'Facebook',
     rating: 5,
@@ -104,44 +120,12 @@ export const reviews = [
     avatar: 'https://picsum.photos/seed/avatar-rachael/100/100'
   },
   {
-    quote: "Norbert was a pleasure to deal with. Professional and Amazing at cleaning my sofas and carpet in my lounge. Will definitely be recommending.",
+    quote: "Norbert was a pleasure deal with. Professional and Amazing at cleaning my sofas and carpet in my lounge. Will definitely be recommending.",
     author: 'Sam Jone-ess',
     platform: 'Facebook',
     rating: 5,
     time: '2 years ago',
     avatar: 'https://picsum.photos/seed/avatar-sam/100/100'
-  },
-  {
-    quote: "My living room carpet looks brand new. I have a young dog and when he was a pup he had quite a few accidents of which I couldn't get rid of the stains...",
-    author: 'Naomi Crew',
-    platform: 'Facebook',
-    rating: 5,
-    time: '2 years ago',
-    avatar: 'https://picsum.photos/seed/avatar-naomi/100/100'
-  },
-  {
-    quote: "Fantastic service! My carpets have never looked better. Professional, punctual, and very friendly. Highly recommended.",
-    author: 'David Chen',
-    platform: 'Facebook',
-    rating: 5,
-    time: '8 months ago',
-    avatar: 'https://picsum.photos/seed/avatar-david/100/100'
-  },
-  {
-    quote: "They did an incredible job on our upholstery. The sofa looks brand new. I'm so impressed with the quality of their work.",
-    author: 'Laura Smith',
-    platform: 'Facebook',
-    rating: 5,
-    time: '10 months ago',
-    avatar: 'https://picsum.photos/seed/avatar-laura/100/100'
-  },
-  {
-    quote: "Quick, efficient, and thorough. The team was amazing and got rid of some very tough stains I thought were permanent. Thank you!",
-    author: 'Tom Williams',
-    platform: 'Facebook',
-    rating: 5,
-    time: '11 months ago',
-    avatar: 'https://picsum.photos/seed/avatar-tom/100/100'
   }
 ];
 

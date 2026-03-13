@@ -179,7 +179,7 @@ export default function Home() {
             <ScrollReveal className="text-center space-y-2 mb-12">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">EXCELLENT</h2>
                 <StarRating rating={5} className="justify-center"/>
-                <p className="text-muted-foreground">Based on {reviews.length} reviews</p>
+                <p className="text-muted-foreground">Based on 177 reviews</p>
                 <div className="flex items-center justify-center gap-2">
                     <Facebook className="w-5 h-5 text-[#1877F2]" />
                     <span className="font-bold text-lg text-[#1877F2]">facebook</span>
