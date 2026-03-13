@@ -1,4 +1,3 @@
-
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,6 +21,7 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const WhatsappQuoteSchema = z.object({
   rooms: z.string().min(1, { message: "Please specify which rooms you'd like cleaned." }),
+  postcode: z.string().min(3, { message: "Please enter a valid postal code." }),
   email: z.string().email({ message: "Please enter a valid email address." }).optional().or(z.literal('')),
   phone: z.string().min(10, { message: "Please enter a valid phone number." }).optional().or(z.literal('')),
   message: z.string().min(10, { message: "Please add a short message (min. 10 characters)." }).max(500, { message: "Message is too long (max. 500 characters)."}),
@@ -37,6 +37,7 @@ export default function WhatsappQuoteForm() {
     resolver: zodResolver(WhatsappQuoteSchema),
     defaultValues: {
       rooms: "",
+      postcode: "",
       email: "",
       phone: "",
       message: "",
@@ -50,6 +51,7 @@ export default function WhatsappQuoteForm() {
 *New Quote Request*
 
 *Rooms:* ${data.rooms}
+*Postcode:* ${data.postcode}
 *Email:* ${data.email || 'Not provided'}
 *Phone:* ${data.phone || 'Not provided'}
 
@@ -80,26 +82,48 @@ ${data.message}
       <CardContent className="p-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <motion.div
-              variants={fieldVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <FormField
-                control={form.control}
-                name="rooms"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Rooms to Clean</FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g., Living Room, 2 Bedrooms" {...field} className="bg-background"/>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </motion.div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <motion.div
+                    variants={fieldVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                <FormField
+                    control={form.control}
+                    name="rooms"
+                    render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Rooms to Clean</FormLabel>
+                        <FormControl>
+                        <Input placeholder="e.g., Living Room, 2 Bedrooms" {...field} className="bg-background"/>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                    )}
+                />
+                </motion.div>
+                <motion.div
+                    variants={fieldVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 0.5, delay: 0.15 }}
+                >
+                    <FormField
+                        control={form.control}
+                        name="postcode"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Postcode</FormLabel>
+                            <FormControl>
+                            <Input placeholder="Your postal code" {...field} className="bg-background"/>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                        )}
+                    />
+                </motion.div>
+            </div>
 
             <motion.div
               className="grid grid-cols-1 gap-4 sm:grid-cols-2"
@@ -113,7 +137,7 @@ ${data.message}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email Address</FormLabel>
+                    <FormLabel>Email Address (Optional)</FormLabel>
                     <FormControl>
                       <Input type="email" placeholder="your@email.com" {...field} className="bg-background"/>
                     </FormControl>
@@ -126,7 +150,7 @@ ${data.message}
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
+                    <FormLabel>Phone Number (Optional)</FormLabel>
                     <FormControl>
                       <Input type="tel" placeholder="Your contact number" {...field} className="bg-background"/>
                     </FormControl>
