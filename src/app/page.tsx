@@ -10,9 +10,8 @@ import { reviews } from '@/lib/data';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import InstantQuoteForm from '@/components/instant-quote-form';
-import { Star, Facebook, Instagram } from 'lucide-react';
+import { Star, Facebook, Instagram, Sparkles, ScrollText, Sofa, Building2, BedDouble, ClipboardCheck } from 'lucide-react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import { Separator } from '@/components/ui/separator';
 import TextType from '@/components/TextType';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
@@ -27,6 +26,15 @@ const StarRating = ({ rating, className }: { rating: number, className?: string 
     ))}
   </div>
 );
+
+const proServices = [
+  { title: "Carpet Cleaning", icon: Sparkles, },
+  { title: "Rug Cleaning", icon: ScrollText, },
+  { title: "Sofa Cleaning", icon: Sofa, },
+  { title: "Commercial Carpet Cleaning", icon: Building2, },
+  { title: "Mattress Cleaning", icon: BedDouble, },
+  { title: "End of Tenancy Cleaning", icon: ClipboardCheck, },
+];
 
 
 export default function Home() {
@@ -94,64 +102,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Overview */}
-        <section id="services-overview" className="w-full bg-background">
+        {/* Professional Services */}
+        <section id="professional-services" className="w-full bg-secondary">
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <ScrollReveal>
-                <Card className="rounded-2xl border-2 border-primary/50 transition-all duration-300 h-full hover:shadow-xl hover:scale-105 hover:-translate-y-2">
-                  <CardContent className="p-12 space-y-4 flex flex-col h-full">
-                    <h3 className="text-2xl font-bold">Carpet Cleaning</h3>
-                    <p className="text-muted-foreground">Enrich your space with professional carpet care.</p>
-                    <Separator className="bg-primary/50"/>
-                    <ul className="space-y-2 text-muted-foreground flex-grow">
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Stain removal and deep cleaning</span></li>
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Residential and commercial carpet cleaning</span></li>
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Specialized treatments for dirt and tough stains</span></li>
-                    </ul>
-                    <Button asChild className="w-full font-bold mt-4">
-                      <Link href="#quote">ASK FOR QUOTE</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-              
-              <ScrollReveal delay={0.1}>
-                <Card className="rounded-2xl border-2 border-primary/50 transition-all duration-300 h-full hover:shadow-xl hover:scale-105 hover:-translate-y-2">
-                  <CardContent className="p-12 space-y-4 flex flex-col h-full">
-                    <h3 className="text-2xl font-bold">Upholstery Cleaning</h3>
-                    <p className="text-muted-foreground">Support your favorite surfaces with expert care.</p>
-                    <Separator className="bg-primary/50"/>
-                    <ul className="space-y-2 text-muted-foreground flex-grow">
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Comprehensive cleaning for various fabrics</span></li>
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Stain and allergen removal</span></li>
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Speedy drying process with complimentary upholstery dryers</span></li>
-                    </ul>
-                    <Button asChild className="w-full font-bold mt-4">
-                      <Link href="#quote">ASK FOR QUOTE</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.2}>
-                <Card className="rounded-2xl border-2 border-primary/50 transition-all duration-300 h-full hover:shadow-xl hover:scale-105 hover:-translate-y-2">
-                  <CardContent className="p-12 space-y-4 flex flex-col h-full">
-                    <h3 className="text-2xl font-bold">Hard Floor Cleaning</h3>
-                    <p className="text-muted-foreground">Take your floors to the next level with professional care.</p>
-                    <Separator className="bg-primary/50"/>
-                    <ul className="space-y-2 text-muted-foreground flex-grow">
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Hardwood floor cleaning and restoration</span></li>
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Floor sealing, waxing, and buffing</span></li>
-                      <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-[9px] rounded-full bg-muted-foreground shrink-0" /><span>Complete maintenance for all hard surfaces</span></li>
-                    </ul>
-                    <Button asChild className="w-full font-bold mt-4">
-                      <Link href="#quote">ASK FOR QUOTE</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            </div>
+            <ScrollReveal className="text-center space-y-3 mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Our Professional Cleaning Services</h2>
+               <p className="max-w-[700px] mx-auto text-muted-foreground md:text-lg">
+                We offer a wide range of cleaning services to meet your needs, from carpets to commercial spaces.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+                  {proServices.map((service) => (
+                      <Card key={service.title} className="group flex flex-col items-center justify-start p-4 text-center transition-all duration-300 hover:shadow-primary/20 hover:shadow-lg hover:scale-105 hover:-translate-y-1 border bg-card hover:border-primary">
+                          <service.icon className="w-10 h-10 text-primary mb-3 transition-transform group-hover:scale-110" />
+                          <h3 className="font-semibold text-sm md:text-base h-12 flex items-center justify-center">{service.title}</h3>
+                      </Card>
+                  ))}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
