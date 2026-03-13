@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import TopBar from "@/components/top-bar";
+import SplashScreen from "@/components/splash-screen";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
           poppins.variable
         )}
       >
+        <SplashScreen />
         <TopBar />
         {children}
         <Toaster />

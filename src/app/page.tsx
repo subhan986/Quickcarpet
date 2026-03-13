@@ -1,6 +1,8 @@
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,11 +12,12 @@ import Header from '@/components/header';
 import InstantQuoteForm from '@/components/instant-quote-form';
 import { Star, Facebook, Instagram } from 'lucide-react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import SocialIcons from '@/components/SocialIcons';
-import ChatWidget from '@/components/ChatWidget';
 import { Separator } from '@/components/ui/separator';
 import TextType from '@/components/TextType';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const SocialIcons = dynamic(() => import('@/components/SocialIcons'), { ssr: false });
+const ChatWidget = dynamic(() => import('@/components/ChatWidget'), { ssr: false });
 
 
 const StarRating = ({ rating, className }: { rating: number, className?: string }) => (
