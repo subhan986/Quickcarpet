@@ -1,13 +1,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -186,41 +179,32 @@ export default function Home() {
                 </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <Carousel
-                opts={{ loop: true }}
-                className="w-full max-w-6xl mx-auto"
-              >
-                <CarouselContent>
-                  {reviews.map((review, index) => (
-                      <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                          <Card className="h-full">
-                              <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
-                                  <div className="flex items-start gap-4">
-                                      <Avatar>
-                                          <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
-                                          <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
-                                      </Avatar>
-                                      <div className="flex-1">
-                                        <div className="flex justify-between items-start">
-                                          <div>
-                                            <p className="font-semibold">{review.author}</p>
-                                            <p className="text-sm text-muted-foreground">{review.time}</p>
-                                          </div>
-                                          <Facebook className="w-5 h-5 text-[#1877F2]" />
-                                        </div>
-                                        <StarRating rating={review.rating} className="mt-2" />
-                                      </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                {reviews.map((review, index) => (
+                    <Card key={index} className="h-full">
+                        <CardContent className="p-6 text-left space-y-4 flex flex-col h-full">
+                            <div className="flex items-start gap-4">
+                                <Avatar>
+                                    <AvatarImage src={review.avatar} alt={review.author} data-ai-hint="person face" />
+                                    <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div className="flex-1">
+                                  <div className="flex justify-between items-start">
+                                    <div>
+                                      <p className="font-semibold">{review.author}</p>
+                                      <p className="text-sm text-muted-foreground">{review.time}</p>
+                                    </div>
+                                    <Facebook className="w-5 h-5 text-[#1877F2]" />
                                   </div>
-                                  <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
-                                  <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
-                              </CardContent>
-                          </Card>
-                      </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -left-4" />
-                <CarouselNext className="text-primary border-primary hover:bg-primary hover:text-primary-foreground -right-4" />
-              </Carousel>
+                                  <StarRating rating={review.rating} className="mt-2" />
+                                </div>
+                            </div>
+                            <p className="text-muted-foreground flex-grow">"{review.quote}"</p>
+                            <Link href="#" className="text-sm text-primary hover:underline">Read more</Link>
+                        </CardContent>
+                    </Card>
+                ))}
+              </div>
             </ScrollReveal>
            </div>
         </section>

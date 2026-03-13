@@ -126,6 +126,22 @@ export const reviews = [
     rating: 5,
     time: '2 years ago',
     avatar: 'https://picsum.photos/seed/avatar-sam/100/100'
+  },
+  {
+    quote: 'Absolutely brilliant service. My carpets are like new. Norbert was very professional and friendly. Would highly recommend.',
+    author: 'Sarah Jenkins',
+    platform: 'Facebook',
+    rating: 5,
+    time: '10 months ago',
+    avatar: 'https://picsum.photos/seed/avatar-sarah/100/100'
+  },
+  {
+    quote: 'Fantastic job on our rug which had some tough stains. It looks amazing now. Thank you so much for your hard work!',
+    author: 'Tom Wilson',
+    platform: 'Facebook',
+    rating: 5,
+    time: '1 year ago',
+    avatar: 'https://picsum.photos/seed/avatar-tom/100/100'
   }
 ];
 
