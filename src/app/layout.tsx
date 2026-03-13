@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import TopBar from "@/components/top-bar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           poppins.variable
         )}
       >
+        <TopBar />
         {children}
         <Toaster />
       </body>
