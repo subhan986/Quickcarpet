@@ -68,7 +68,7 @@ export const pricing = {
 };
 
 export const team = [
-    { name: 'Norbert', role: 'Founder & Lead Technician', bio: 'With over 15 years of experience, Norbert leads our team with a passion for perfection and customer satisfaction.', avatar: 'https://picsum.photos/seed/team-norbert/200/200' },
+    { name: 'Adnan', role: 'Founder & Lead Technician', bio: 'With over 15 years of experience, Adnan leads our team with a passion for perfection and customer satisfaction.', avatar: 'https://picsum.photos/seed/team-adnan/200/200' },
     { name: 'The Team', role: 'Skilled Cleaning Staff', bio: 'Our professional and friendly staff are fully trained, insured, and dedicated to delivering outstanding results every time.', avatar: 'https://picsum.photos/seed/team-group/200/200' }
 ];
 
@@ -96,7 +96,7 @@ export const reviews = [
     avatar: 'https://picsum.photos/seed/avatar-sebrina/100/100'
   },
   {
-    quote: 'Norbert visited my house yesterday....Carpets look brand new! What a transformation. Can only say, absolutely fantastic...',
+    quote: 'Adnan visited my house yesterday....Carpets look brand new! What a transformation. Can only say, absolutely fantastic...',
     author: 'Julie Linnane',
     platform: 'Facebook',
     rating: 5,
@@ -120,7 +120,7 @@ export const reviews = [
     avatar: 'https://picsum.photos/seed/avatar-rachael/100/100'
   },
   {
-    quote: "Norbert was a pleasure deal with. Professional and Amazing at cleaning my sofas and carpet in my lounge. Will definitely be recommending.",
+    quote: "Adnan was a pleasure deal with. Professional and Amazing at cleaning my sofas and carpet in my lounge. Will definitely be recommending.",
     author: 'Sam Jone-ess',
     platform: 'Facebook',
     rating: 5,
@@ -128,7 +128,7 @@ export const reviews = [
     avatar: 'https://picsum.photos/seed/avatar-sam/100/100'
   },
   {
-    quote: 'Absolutely brilliant service. My carpets are like new. Norbert was very professional and friendly. Would highly recommend.',
+    quote: 'Absolutely brilliant service. My carpets are like new. Adnan was very professional and friendly. Would highly recommend.',
     author: 'Sarah Jenkins',
     platform: 'Facebook',
     rating: 5,
