@@ -58,7 +58,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-muted-foreground">
-          <p>Copyright &copy; {new Date().getFullYear()} Quick Step Carpets & Upholstery Dry Cleaning | Powered by Matysiewicz Studio</p>
+          <p>
+            Copyright &copy; {new Date().getFullYear()} Quick Step Carpets & Upholstery Dry Cleaning | Powered by{' '}
+            <a href="https://subhan-ai.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+              M.subhan
+            </a>
+          </p>
         </div>
       </div>
     </footer>
