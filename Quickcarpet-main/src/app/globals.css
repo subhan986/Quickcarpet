@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 223 57% 22%;
+    --card: 0 0% 100%;
+    --card-foreground: 223 57% 22%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 223 57% 22%;
+    --primary: 198 71% 56%;
+    --primary-foreground: 223 57% 22%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 20% 90%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 210 20% 90%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 198 71% 56%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* This is for if a light mode is added later */
+    --background: 215 30% 15%;
+    --foreground: 210 40% 98%;
+    --card: 215 30% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 30% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 198 71% 46%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 25% 22.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 22.5%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 215 25% 22.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 22.5%;
+    --input: 215 25% 22.5%;
+    --ring: 198 71% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  section {
+    @apply w-full py-12 md:py-20 lg:py-24;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animated-gradient-border {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        padding: 2px;
+        display: inline-block;
+        border-radius: 9999px;
+    }
+
+    .animated-gradient-border::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -200%;
+        left: -200%;
+        width: 500%;
+        height: 500%;
+        background: conic-gradient(
+            hsl(var(--primary)),
+            hsl(var(--accent)),
+            hsl(var(--primary))
+        );
+        animation: spin 4s linear infinite;
+    }
+}
