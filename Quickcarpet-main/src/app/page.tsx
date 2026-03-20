@@ -15,7 +15,6 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 import TextType from '@/components/TextType';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
-const SocialIcons = dynamic(() => import('@/components/SocialIcons'), { ssr: false });
 const ChatWidget = dynamic(() => import('@/components/ChatWidget'), { ssr: false });
 
 
@@ -44,7 +43,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
 
-        <SocialIcons />
         <ChatWidget />
 
         {/* Hero Section */}
