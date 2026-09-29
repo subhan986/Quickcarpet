@@ -54,7 +54,7 @@ export default function WhatsappQuoteForm() {
 ${data.message}
     `.trim();
 
-    const whatsappUrl = `https://wa.me/447806997720?text=${encodeURIComponent(formattedMessage)}`;
+    const whatsappUrl = `https://wa.me/447537141059?text=${encodeURIComponent(formattedMessage)}`;
     
     window.open(whatsappUrl, '_blank');
 

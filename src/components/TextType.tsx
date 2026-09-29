@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
-import { gsap } from 'gsap';
 import './TextType.css';
 
 const TextType = ({
@@ -31,8 +30,7 @@ const TextType = ({
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
   const [isFinished, setIsFinished] = useState(false);
-  const cursorRef = useRef(null);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
 
@@ -64,23 +62,6 @@ const TextType = ({
     observer.observe(containerRef.current);
     return () => observer.disconnect();
   }, [startOnVisible]);
-
-  useEffect(() => {
-    if (showCursor && cursorRef.current) {
-      if (isFinished) {
-        gsap.killTweensOf(cursorRef.current);
-      } else {
-        gsap.set(cursorRef.current, { opacity: 1 });
-        gsap.to(cursorRef.current, {
-          opacity: 0,
-          duration: cursorBlinkDuration,
-          repeat: -1,
-          yoyo: true,
-          ease: 'power2.inOut'
-        });
-      }
-    }
-  }, [showCursor, cursorBlinkDuration, isFinished]);
 
   useEffect(() => {
     if (!isVisible || isFinished) return;
@@ -120,12 +101,12 @@ const TextType = ({
             },
             variableSpeed ? getRandomSpeed() : typingSpeed
           );
-        } else { // Typing of one sentence is complete
+        } else {
           if (onSentenceComplete) {
             onSentenceComplete(textArray[currentTextIndex], currentTextIndex);
           }
           if (!loop && currentTextIndex === textArray.length - 1) {
-            setIsFinished(true); // End of all sentences, no loop
+            setIsFinished(true);
             return;
           }
           timeout = setTimeout(() => {
@@ -142,7 +123,6 @@ const TextType = ({
     }
 
     return () => clearTimeout(timeout);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     currentCharIndex,
     displayedText,
@@ -158,7 +138,8 @@ const TextType = ({
     reverseMode,
     variableSpeed,
     onSentenceComplete,
-    isFinished
+    isFinished,
+    getRandomSpeed
   ]);
 
   const shouldHideCursor =
@@ -176,8 +157,7 @@ const TextType = ({
     </span>,
     showCursor && !isFinished && (
       <span
-        ref={cursorRef}
-        className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
+        className={`text-type__cursor animate-pulse ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
       >
         {cursorCharacter}
       </span>

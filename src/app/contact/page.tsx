@@ -1,4 +1,3 @@
-
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,7 +35,7 @@ export default function ContactPage() {
                       <Phone size={20} className="mt-1 text-primary shrink-0"/>
                       <div>
                           <p className="font-semibold text-foreground">Phone</p>
-                          <a href="tel:07806997720" className="hover:text-primary">07806997720</a>
+                          <a href="tel:07537141059" className="hover:text-primary">07537 141059</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">

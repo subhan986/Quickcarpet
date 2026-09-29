@@ -11,7 +11,7 @@ export default function TopBar() {
           </div>
           <div className="flex items-center gap-2">
             <Phone className="h-4 w-4" />
-            <a href="tel:07806997720" className="hover:underline">07806997720</a>
+            <a href="tel:07537141059" className="hover:underline">07537 141059</a>
           </div>
         </div>
       </div>
